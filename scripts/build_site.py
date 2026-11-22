@@ -28,6 +28,12 @@ HEAD = """<!doctype html>
 <meta name="description" content="The Ordinary Gentleman Sports Network: live scores, standings, trade grades and dynasty tools for The League of Ordinary Gentleman.">
 <meta name="theme-color" content="#0F2B23">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="OGSN">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
 """

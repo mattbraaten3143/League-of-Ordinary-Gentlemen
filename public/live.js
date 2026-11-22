@@ -208,6 +208,13 @@
       });
   }
 
+  // Installable app + notifications: register the service worker (website only)
+  if ("serviceWorker" in navigator && location.protocol === "https:") {
+    addEventListener("load", function () { navigator.serviceWorker.register("/sw.js").catch(function () {}); });
+  }
+  // Keep the browser's install offer for the Live tab's "Install app" button
+  addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); window.__ogsnInstall = e; document.dispatchEvent(new Event("ogsn:installable")); });
+
   var timer = setTimeout(startApp, BOOT_TIMEOUT); // Sleeper too slow: draw with built-in data
   fetchAll().then(function (s) {
     if (started) return;

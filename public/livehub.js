@@ -112,6 +112,57 @@
   }
   function visible() { var v = document.querySelector('[data-view="live"]'); return v && !v.hidden; }
 
+
+  // ---------- app install + notifications ----------
+  var A = load("ogsn-alerts"); if (Array.isArray(A)) A = {};
+  A = { scores: A.scores || "big", games: A.games !== false, news: A.news !== false };
+  var P = { supported: "serviceWorker" in navigator && "PushManager" in window && "Notification" in window, ready: false, key: null, sub: null, msg: "" };
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  var standalone = function () { return (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone === true; };
+  function b64(s) { var pad = "=".repeat((4 - s.length % 4) % 4), raw = atob((s + pad).replace(/-/g, "+").replace(/_/g, "/")); return Uint8Array.from(raw, function (c) { return c.charCodeAt(0); }); }
+  function prefs() { return { team: ME || 0, track: Array.from(track), pins: Array.from(pins), scores: A.scores, games: A.games, news: A.news }; }
+  function api(method, url, body) { return fetch(url, { method: method, headers: { "content-type": "application/json" }, body: body ? JSON.stringify(body) : undefined }).then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) throw new Error(j.error || r.status); return j; }); }); }
+  function pushInit() {
+    if (!P.supported) return Promise.resolve();
+    return fetch("/api/push", { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; }).then(function (j) {
+      P.ready = !!j.ready; P.key = j.publicKey || null;
+      return navigator.serviceWorker.ready.then(function (reg) { return reg.pushManager.getSubscription(); }).then(function (sub) { P.sub = sub; });
+    }).catch(function () {});
+  }
+  function syncPrefs() { if (P.sub) api("POST", "/api/push", { subscription: P.sub.toJSON(), prefs: prefs() }).catch(function () {}); }
+  function alertsOn() {
+    P.msg = "Asking your browser…"; render();
+    return Notification.requestPermission().then(function (perm) {
+      if (perm !== "granted") throw new Error("Notifications were blocked. Allow them for this site in your browser or phone settings, then try again.");
+      return navigator.serviceWorker.ready;
+    }).then(function (reg) { return reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64(P.key) }); })
+      .then(function (sub) { P.sub = sub; return api("POST", "/api/push", { subscription: sub.toJSON(), prefs: prefs() }); })
+      .then(function () { P.msg = "Alerts are on. A test notification is on its way."; render(); return api("POST", "/api/push?test=1", { endpoint: P.sub.endpoint }); })
+      .catch(function (e) { P.msg = e.message || "Could not turn on alerts."; render(); });
+  }
+  function alertsOff() {
+    if (!P.sub) return;
+    var ep = P.sub.endpoint;
+    P.sub.unsubscribe().catch(function () {}).then(function () { return api("DELETE", "/api/push", { endpoint: ep }); })
+      .then(function () { P.sub = null; P.msg = "Alerts are off on this device."; render(); }).catch(function () { P.sub = null; render(); });
+  }
+  function appPanel() {
+    var inst = standalone() ? '<p class="lv-ok">Installed. You are using the app.</p>'
+      : window.__ogsnInstall ? '<button type="button" class="btn solid" id="lvinstall">Install the app</button>'
+      : isIOS ? '<p>On iPhone or iPad: open this site in <b>Safari</b>, tap <b>Share</b> <span aria-hidden="true">⎋</span>, then <b>Add to Home Screen</b>.</p>'
+      : '<p>Use your browser\'s <b>Install</b> option (the icon at the right of the address bar, or the menu) to add OGSN as an app.</p>';
+    var al;
+    if (!P.supported) al = isIOS && !standalone() ? "<p>On iPhone, alerts work in the installed app. Add OGSN to your Home Screen first, open it from there, then turn alerts on.</p>" : "<p>This browser does not support notifications.</p>";
+    else if (!P.ready) al = "<p>Alerts are being set up. Check back soon.</p>";
+    else if (!P.sub) al = '<button type="button" class="btn solid" id="lvalerts">Turn on alerts</button>';
+    else al = '<div class="lv-prefs"><label>Player scores <select id="lvscores"><option value="big"' + (A.scores === "big" ? " selected" : "") + '>Big plays (6+ points)</option><option value="all"' + (A.scores === "all" ? " selected" : "") + '>Every score</option><option value="off"' + (A.scores === "off" ? " selected" : "") + '>Off</option></select></label>' +
+      '<label><input type="checkbox" id="lvgames"' + (A.games ? " checked" : "") + "> Lead changes and finals in my matchup and pinned matchups</label>" +
+      '<label><input type="checkbox" id="lvnews"' + (A.news ? " checked" : "") + '> League news: new recap, new trades</label>' +
+      '<div class="lv-btns"><button type="button" class="tkbtn" id="lvtest">Send a test</button><button type="button" class="tkbtn" id="lvoff">Turn off on this device</button></div></div>' +
+      '<p class="lv-note">Score alerts cover the players you track' + (ME ? " and your team's starters" : "") + "." + (ME ? "" : ' Pick your team in <a href="#hub">My Team</a> to also get alerts for your starters and your matchup.') + "</p>";
+    return '<section class="box lv-app"><div class="boxhead"><h2>App &amp; alerts</h2><span class="eyebrow">' + (P.sub ? "Alerts on" : "Alerts off") + '</span></div><div class="lv-appb"><div><h3>Get the app</h3>' + inst + '</div><div><h3>Phone alerts</h3>' + al + (P.msg ? '<p class="lv-note">' + esc(P.msg) + "</p>" : "") + "</div></div></section>";
+  }
+
   // ---------- rendering ----------
   var f1 = function (n) { return (Math.round(n * 100) / 100).toFixed(2); };
   function gameTag(l) {
@@ -161,7 +212,7 @@
     var opts = Object.keys(PL).filter(function (pid) { return !track.has(pid); }).sort(function (x, y) { return PL[x].name.localeCompare(PL[y].name); })
       .map(function (pid) { return '<option value="' + esc(PL[pid].name + " · " + PL[pid].pos + " · " + tn(PL[pid].roster)) + '" data-pid="' + pid + '"></option>'; }).join("");
 
-    root.innerHTML =
+    root.innerHTML = appPanel() +
       '<div class="lv-status"><span class="lv-dot' + (liveN ? " on" : "") + '"></span><b>Week ' + S.week + "</b> · " + (liveN ? liveN + " NFL game" + (liveN === 1 ? "" : "s") + " in progress" : "No NFL games in progress") +
       ' · updated ' + S.updated.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", second: "2-digit" }) + (liveN ? " · refreshes every 30 seconds" : "") +
       ' <button type="button" class="tkbtn" id="lvnow">Refresh now</button></div>' +
@@ -187,19 +238,28 @@
   }
 
   function onClick(e) {
-    var t = e.target.closest("[data-track],[data-pin],[data-open],#lvnow");
+    var t = e.target.closest("[data-track],[data-pin],[data-open],#lvnow,#lvinstall,#lvalerts,#lvtest,#lvoff");
     if (!t || !t.closest("#livehub")) return;
     if (t.id === "lvnow") { refresh(); return; }
-    if (t.dataset.track) { var p = t.dataset.track; track.has(p) ? track.delete(p) : track.add(p); save("ogsn-track", Array.from(track)); }
-    if (t.dataset.pin) { var m = t.dataset.pin; pins.has(m) ? pins.delete(m) : pins.add(m); save("ogsn-pin", Array.from(pins)); }
+    if (t.id === "lvinstall" && window.__ogsnInstall) { window.__ogsnInstall.prompt(); window.__ogsnInstall.userChoice.then(function () { window.__ogsnInstall = null; render(); }); return; }
+    if (t.id === "lvalerts") { alertsOn(); return; }
+    if (t.id === "lvoff") { alertsOff(); return; }
+    if (t.id === "lvtest") { P.msg = "Test sent."; api("POST", "/api/push?test=1", { endpoint: P.sub.endpoint }).catch(function (er) { P.msg = er.message; render(); }); render(); return; }
+    if (t.dataset.track) { var p = t.dataset.track; track.has(p) ? track.delete(p) : track.add(p); save("ogsn-track", Array.from(track)); syncPrefs(); }
+    if (t.dataset.pin) { var m = t.dataset.pin; pins.has(m) ? pins.delete(m) : pins.add(m); save("ogsn-pin", Array.from(pins)); syncPrefs(); }
     if (t.dataset.open) S.open[t.dataset.open] = !S.open[t.dataset.open];
     render();
   }
   function onInput(e) {
     if (e.target.id === "lvmine") { S.filterMine = e.target.checked; render(); return; }
+    if (e.target.id === "lvscores" || e.target.id === "lvgames" || e.target.id === "lvnews") {
+      if (e.type !== "change") return;
+      A = { scores: document.getElementById("lvscores").value, games: document.getElementById("lvgames").checked, news: document.getElementById("lvnews").checked };
+      save("ogsn-alerts", A); syncPrefs(); P.msg = "Saved."; render(); return;
+    }
     if (e.target.id !== "lvfind") return;
     var o = Array.from(document.querySelectorAll("#lvlist option")).find(function (x) { return x.value === e.target.value; });
-    if (o) { track.add(o.dataset.pid); save("ogsn-track", Array.from(track)); e.target.value = ""; render(); var f = document.getElementById("lvfind"); if (f) f.focus(); }
+    if (o) { track.add(o.dataset.pid); save("ogsn-track", Array.from(track)); syncPrefs(); e.target.value = ""; render(); var f = document.getElementById("lvfind"); if (f) f.focus(); }
   }
 
   function css() {
@@ -244,7 +304,12 @@
       ".lv-bar{height:.3rem;background:var(--lose);margin:0 .9rem}.lv-bar i{display:block;height:100%;background:var(--win)}",
       ".lv-lineups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;padding:.6rem .9rem 0}",
       ".lv-more{font-family:var(--ui);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;background:none;border:0;border-top:1px solid var(--rule);margin-top:.6rem;padding:.5rem;cursor:pointer;color:var(--muted)}.lv-more:empty{display:none}",
-      "@media (max-width:780px){.lv-top{grid-template-columns:1fr}.lv-grid{grid-template-columns:1fr}.lv-lineups{grid-template-columns:1fr}}"
+      ".lv-appb{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem;padding:.9rem}",
+      ".lv-appb h3{font-size:1.05rem;margin-bottom:.4rem}.lv-appb p{font-size:.9rem}",
+      ".lv-prefs{display:grid;gap:.45rem;font-size:.88rem}.lv-prefs select{font:inherit;margin-left:.3rem}",
+      ".lv-btns{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.2rem}",
+      ".lv-note{font-size:.8rem!important;color:var(--muted);margin-top:.5rem}.lv-ok{color:var(--win);font-weight:600}",
+      "@media (max-width:780px){.lv-appb{grid-template-columns:1fr}.lv-top{grid-template-columns:1fr}.lv-grid{grid-template-columns:1fr}.lv-lineups{grid-template-columns:1fr}}"
     ].join("\n");
     document.head.appendChild(s);
   }
@@ -258,6 +323,8 @@
     document.addEventListener("click", onClick);
     document.addEventListener("change", onInput);
     document.addEventListener("input", onInput);
+    document.addEventListener("ogsn:installable", function () { if (S.updated) render(); });
+    pushInit().then(function () { if (S.updated) render(); });
     var go = function () { if (visible()) { refresh().then(schedule); } };
     addEventListener("hashchange", function () { setTimeout(go, 0); });
     go();

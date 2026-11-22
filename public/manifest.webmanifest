@@ -1,0 +1,20 @@
+{
+  "name": "Ordinary Gentleman Sports Network",
+  "short_name": "OGSN",
+  "description": "Live scores, standings, trade grades and dynasty tools for The League of Ordinary Gentleman.",
+  "id": "/",
+  "start_url": "/?source=app",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#EEF0EA",
+  "theme_color": "#0F2B23",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Live", "url": "/#live", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Trade Calculator", "url": "/#calc", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

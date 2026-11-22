@@ -27,6 +27,7 @@ vercel.json              hosting settings, including the /sleeper pass-through t
 |---|---|---|
 | Someone opens the site | `live.js` pulls current records, standings and scores from Sleeper; ticker refreshes every minute during games | the visitor's browser |
 | Every morning, about 5 AM Central | `refresh.py` pulls Sleeper, FantasyCalc and Dynasty Daddy; `news.py` writes news items for trades, $10+ waiver adds and renames; `recap_prep.py` gathers the facts for last week's recap once the week is over (Tuesday); page rebuilt and committed | GitHub Actions (`.github/workflows/refresh.yml`) |
+| About every minute during games | Game-day ticker calls `/api/tick`, which sends phone alerts | GitHub Actions + Vercel |
 | Every 2 hours | `league_wire.py`: league moves from the last 7 days, injury designation changes for rostered players, and the current injury report (News → League Wire) | GitHub Actions (`.github/workflows/league-wire.yml`) |
 | Every morning, about 7:43 AM Central | **OGSN Writer** (Claude scheduled task, runs in the cloud, approves itself): writes the weekly recap when facts are waiting, writes headlines and takes for new trades, then mirrors the site to the Claude artifact | Claude cloud |
 | Every commit | Vercel redeploys the site | Vercel |
@@ -69,6 +70,19 @@ browser (`ogsn-track`, `ogsn-pin`; the My Team pick keeps that team's matchup op
 of point changes while the page is open. Refreshes every 30 seconds while NFL games are in progress,
 every 5 minutes otherwise. Data: Sleeper matchups and schedule, ESPN's public scoreboard for clocks
 (unofficial feed; if it fails, Sleeper's in-game/final status is used), and `proj` from the daily refresh.
+
+## App and phone alerts
+
+- **Installable app**: `public/manifest.webmanifest`, `public/icons/`, `public/sw.js` (service worker:
+  network-first pages, offline fallback, push display). Android/desktop get an "Install the app" button on
+  the Live tab; iPhone users add it from Safari's Share menu (iOS only allows web alerts in installed apps).
+- **Alerts** (Live tab → App & alerts): each device picks player-score alerts (big plays 6+ or every score,
+  for tracked players and its team's starters), lead changes and finals in its matchup and pinned matchups,
+  and league news (new recap, new trades).
+  - `api/push.js` stores sign-ups in Upstash Redis (Vercel Storage → Upstash, env `KV_REST_API_URL`/`KV_REST_API_TOKEN`).
+    VAPID keys are generated on first use and kept in Redis; nothing to paste.
+  - `api/tick.js` compares live points with the last run and sends alerts; a Redis lock keeps it to once per 40 s.
+  - `.github/workflows/game-ticker.yml` calls the tick about once a minute while games are on, otherwise once per half hour.
 
 ## Claude's take (trade calculator)
 
