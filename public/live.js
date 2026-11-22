@@ -169,6 +169,43 @@
     }, POLL_MS);
   }
 
+  /* "Claude's take" in the trade calculator. Inside Claude the page uses the viewer's own
+     Claude sign-in (window.claude); on this site the same button goes through /api/take,
+     which holds the prompt and the API key. Only the calculator's facts are sent. */
+  if (!window.claude) window.claude = {
+    use: function () {
+      return fetch("/api/take", { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (j) { return j && j.ok ? take : false; })
+        .catch(function () { return false; });
+    }
+  };
+  function take(prompt, opts) {
+    opts = opts || {};
+    var at = prompt.lastIndexOf("FACTS:"), sides;
+    try { sides = JSON.parse(prompt.slice(at + 6)); } catch (e) { return Promise.reject({ code: "error" }); }
+    return fetch("/api/take", { method: "POST", headers: { "content-type": "application/json" },
+                                body: JSON.stringify({ sides: sides }), signal: opts.signal })
+      .then(function (r) {
+        if (!r.ok) return r.json().catch(function () { return {}; })
+          .then(function (j) { throw { code: "error", text: r.status === 429 ? j.error : undefined }; });
+        var rd = r.body.getReader(), dec = new TextDecoder(), text = "";
+        function pump() {
+          return rd.read().then(function (x) {
+            if (x.done) return text;
+            text += dec.decode(x.value, { stream: true });
+            if (opts.onText) opts.onText({ text: text });
+            return pump();
+          });
+        }
+        return pump();
+      })
+      .catch(function (e) {
+        if (e && e.name === "AbortError") throw { code: "cancelled" };
+        throw (e && e.code) ? e : { code: "error" };
+      });
+  }
+
   var timer = setTimeout(startApp, BOOT_TIMEOUT); // Sleeper too slow: draw with built-in data
   fetchAll().then(function (s) {
     if (started || !s) return;

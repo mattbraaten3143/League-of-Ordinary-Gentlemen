@@ -60,10 +60,14 @@ python3 -m http.server 8000 -d public
 Then open http://localhost:8000. Locally there is no `/sleeper` pass-through, so `live.js`
 calls Sleeper's API directly.
 
-## Known differences from the artifact
+## Claude's take (trade calculator)
 
-- The trade calculator's "Claude's take" button only works inside the artifact (it uses the
-  viewer's Claude sign-in). On this site it stays hidden until an AI backend with an API key is added.
+The calculator's "Claude's take" button calls `api/take.js`, a Vercel function that holds the prompt
+and uses the `ANTHROPIC_API_KEY` environment variable (set in Vercel, never in this repo). The browser
+sends only the calculator's facts. Limits: 8 takes per visitor per 10 minutes and 150 per day per
+server instance; the real ceiling is the monthly spend limit in the Anthropic Console. Model:
+`claude-haiku-5-5` (override with a `TAKE_MODEL` environment variable). Inside the Claude artifact the
+same button uses the viewer's own Claude sign-in instead.
 
 ## Roadmap
 

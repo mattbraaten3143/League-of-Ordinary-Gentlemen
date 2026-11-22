@@ -1,0 +1,6 @@
+{
+  "name": "ogsn",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" }
+}
