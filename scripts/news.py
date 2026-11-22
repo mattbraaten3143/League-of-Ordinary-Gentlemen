@@ -80,6 +80,9 @@ def make_items(old, fresh, today):
 
 def main(old_path, fresh_path):
     old, fresh = json.load(open(old_path)), json.load(open(fresh_path))
+    # refresh.py rebuilds a fixed set of fields; keep anything else the site stores (League Wire, injury snapshot)
+    for k, v in old.items():
+        fresh.setdefault(k, v)
     now = datetime.now(ZoneInfo("America/Chicago"))
     today = now.strftime("%Y-%m-%d")
     ed = fresh.setdefault("editorial", {})

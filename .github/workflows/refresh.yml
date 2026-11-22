@@ -60,4 +60,4 @@ jobs:
           if [ -d recaps ]; then git add recaps; fi
           if git diff --cached --quiet; then echo "No changes."; exit 0; fi
           git commit -m "Daily data refresh $(date -u +%Y-%m-%d)"
-          git push
+          git push || (git pull --rebase origin main && git push)

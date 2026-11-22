@@ -218,6 +218,11 @@ tr.me td{background:color-mix(in srgb,var(--flag) 14%,transparent)}
 .wire .side b{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:.98rem;letter-spacing:.02em}
 .wire .side span{color:var(--muted)}
 .wire .meta{font-family:var(--mono);font-size:.66rem;color:var(--muted)}
+#league-wire .side .rb{color:var(--muted)}
+#league-wire .side .rb.st{color:var(--paper)}
+#league-wire .side .rb.ir{color:var(--oxblood-ink)}
+#league-wire .ty .rb{margin-left:0;white-space:nowrap}
+#lwrep li{grid-template-columns:6.8rem minmax(0,1fr)}
 .filters{display:flex;gap:.3rem;flex-wrap:wrap}
 .filters button{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--rule);background:var(--paper);padding:.2rem .5rem;cursor:pointer}
 .filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -705,7 +710,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   <div class="shell">
     <a class="logo" href="#home" aria-label="Ordinary Gentleman Sports Network, home"><b>OG</b><span>The Ordinary Gentleman<small>Sports Network · Est. 2026</small></span></a>
     <nav aria-label="Pages" id="nav">
-      <a class="nt" href="#home">Home</a><a class="nt" href="#hub">My Team</a><div class="ng"><button type="button" class="nt" aria-expanded="false" aria-controls="nm-news">News<i class="car" aria-hidden="true"></i></button><div class="ddm" id="nm-news" hidden><a href="#news">Latest news<small>Trades, big pickups and storylines</small></a><a href="#trades">Trade analysis<small>Every trade, who won and why</small></a><a href="#wire">Transactions<small>The full wire: trades, waivers, free agents</small></a><a href="#recaps">Weekly recaps<small>Each week's recap and awards</small></a><a href="#awards">League awards<small>Vote each week for the season's awards</small></a></div></div><div class="ng"><button type="button" class="nt" aria-expanded="false" aria-controls="nm-ranks">Ranks<i class="car" aria-hidden="true"></i></button><div class="ddm" id="nm-ranks" hidden><a href="#standings">Standings<small>Records, points and Max PF</small></a><a href="#rankings">Power rankings<small>Teams by trade value and contender value</small></a><a href="#ranks">Player ranks<small>Every rostered player and pick, in tiers</small></a><a href="#capital">Draft capital<small>Who owns which picks, and their value</small></a></div></div><div class="ng"><button type="button" class="nt" aria-expanded="false" aria-controls="nm-tools"><span class="lg">Dynasty </span>Tools<i class="car" aria-hidden="true"></i></button><div class="ddm" id="nm-tools" hidden><a href="#calc">Trade calculator<small>Build a deal and see how it fits each team</small></a><a href="#finder">Trade finder<small>Deals that fit both rosters</small></a><a href="#playoffs">Playoff odds<small>10,000 simulations of the rest of the season</small></a><a href="#draftproj">Draft projection<small>Where each 2027 first is likely to land</small></a><a href="#mydials">Your value settings<small>Adjust the values to your own view</small></a></div></div><div class="ng"><button type="button" class="nt" aria-expanded="false" aria-controls="nm-about">About<span class="lg"> This Site</span><i class="car" aria-hidden="true"></i></button><div class="ddm" id="nm-about" hidden><a href="#values">How this site works<small>Where every number comes from, and what AI writes</small></a><a href="#rules">League rules<small>Payouts, draft order and league settings</small></a></div></div>
+      <a class="nt" href="#home">Home</a><a class="nt" href="#hub">My Team</a><div class="ng"><button type="button" class="nt" aria-expanded="false" aria-controls="nm-news">News<i class="car" aria-hidden="true"></i></button><div class="ddm" id="nm-news" hidden><a href="#news">Latest news<small>Trades, big pickups and storylines</small></a><a href="#league-wire">League Wire<small>Moves and injuries for rostered players</small></a><a href="#trades">Trade analysis<small>Every trade, who won and why</small></a><a href="#wire">Transactions<small>The full wire: trades, waivers, free agents</small></a><a href="#recaps">Weekly recaps<small>Each week's recap and awards</small></a><a href="#awards">League awards<small>Vote each week for the season's awards</small></a></div></div><div class="ng"><button type="button" class="nt" aria-expanded="false" aria-controls="nm-ranks">Ranks<i class="car" aria-hidden="true"></i></button><div class="ddm" id="nm-ranks" hidden><a href="#standings">Standings<small>Records, points and Max PF</small></a><a href="#rankings">Power rankings<small>Teams by trade value and contender value</small></a><a href="#ranks">Player ranks<small>Every rostered player and pick, in tiers</small></a><a href="#capital">Draft capital<small>Who owns which picks, and their value</small></a></div></div><div class="ng"><button type="button" class="nt" aria-expanded="false" aria-controls="nm-tools"><span class="lg">Dynasty </span>Tools<i class="car" aria-hidden="true"></i></button><div class="ddm" id="nm-tools" hidden><a href="#calc">Trade calculator<small>Build a deal and see how it fits each team</small></a><a href="#finder">Trade finder<small>Deals that fit both rosters</small></a><a href="#playoffs">Playoff odds<small>10,000 simulations of the rest of the season</small></a><a href="#draftproj">Draft projection<small>Where each 2027 first is likely to land</small></a><a href="#mydials">Your value settings<small>Adjust the values to your own view</small></a></div></div><div class="ng"><button type="button" class="nt" aria-expanded="false" aria-controls="nm-about">About<span class="lg"> This Site</span><i class="car" aria-hidden="true"></i></button><div class="ddm" id="nm-about" hidden><a href="#values">How this site works<small>Where every number comes from, and what AI writes</small></a><a href="#rules">League rules<small>Payouts, draft order and league settings</small></a></div></div>
     </nav>
     <a class="vbadge" id="vbadge" href="#values" hidden>Custom values</a>
     <div class="status" id="status"></div>
@@ -764,6 +769,14 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
         <div class="box"><div class="boxhead"><h2>Headlines</h2></div><ul class="heads" id="heads"></ul></div>
       </aside>
     </div>
+    <section class="band" id="league-wire" hidden>
+      <div class="bandhead"><h2>League Wire</h2><span class="eyebrow" id="lwupd"></span></div>
+      <div class="two">
+        <div class="box"><div class="boxhead"><h2>Moves &amp; injury news</h2><span class="eyebrow">Last 7 days</span></div><ul class="wire" id="lwfeed"></ul></div>
+        <div class="box"><div class="boxhead"><h2>Injury report</h2><span class="eyebrow">Rostered players</span></div><ul class="wire" id="lwrep"></ul>
+          <p class="foot">Sleeper's current designation for every rostered player. Starters (in this week's set lineup) are marked.</p></div>
+      </div>
+    </section>
     <section class="band" id="awards">
       <div class="bandhead"><h2 id="awhead">Weekly Awards</h2><span class="eyebrow">Trophies are imaginary</span></div>
       <div class="awards" id="awlist"></div>
@@ -1150,6 +1163,23 @@ $("lead").innerHTML=`
     return `<article class="story" id="${slug(s.h)}"><span class="eyebrow">${esc(s.tag)}</span><h3>${esc(s.h)}</h3><p>${lk(head)}</p>${rest?`<details><summary>Keep reading +</summary><p>${lk(rest)}</p></details>`:""}${chips(s.teams)}</article>`;
   }).join("")}</div>`;
 $("heads").innerHTML=headItems()+older.map(s=>{const h=recapHref(s.week);return `<li><a href="${esc(h)}"${ext(h)}><span class="eyebrow">Week ${s.week}</span>${esc(s.h)}</a></li>`}).join("");
+/* League Wire: moves and injury news for rostered players (scripts/league_wire.py) */
+(()=>{const LW=D.leagueWire;if(!LW)return;$("league-wire").hidden=false;
+  const when=new Date(LW.updated);$("lwupd").textContent=isNaN(when)?"":"Updated "+when.toLocaleString("en-US",{month:"short",day:"numeric",hour:"numeric",minute:"2-digit"});
+  const pn=s=>esc(String(s).replace(/ \((QB|RB|WR|TE|K|DEF)\)$/,""));
+  const sev=s=>/^(IR|Out|PUP|Sus)$/.test(s)?"bad":/^(Doubtful|Questionable)$/.test(s)?"warn":"good";
+  const tag=(s,cls)=>`<span class="rb ${cls||""}">${esc(s)}</span>`;
+  const mv=m=>{const t=m.type==="trade"?"Trade":m.type==="waiver"?"Waiver":"Free agent";
+    const by={};m.teams.forEach(id=>by[id]={adds:[],drops:[]});m.adds.forEach(([p,r])=>(by[r]=by[r]||{adds:[],drops:[]}).adds.push(p));m.drops.forEach(([p,r])=>(by[r]=by[r]||{adds:[],drops:[]}).drops.push(p));
+    const tr=m.type==="trade";
+    const sides=Object.entries(by).map(([id,x])=>`<div class="side">${teamBtn(id,"tlink")} ${x.adds.length?`<span>${tr?"get":"add"}</span> ${x.adds.map(pn).join(", ")}`:""}${!tr&&x.drops.length?` <span>drop</span> ${x.drops.map(pn).join(", ")}`:""}</div>`).filter(h=>!tr||/<span>get/.test(h)).join("")+
+      (m.picks&&m.picks.length?`<div class="side"><span>Picks:</span> ${m.picks.map(esc).join("; ")}</div>`:"");
+    return {ts:m.ts,html:`<li><span class="ty ${m.type}">${t}</span><div class="sides">${sides}<span class="meta">${esc(day(m.date))}${m.faab?` · $${m.faab} FAAB`:""}</span></div></li>`}};
+  const inj=[];(LW.days||[]).forEach(dd=>dd.items.forEach(i=>inj.push({ts:new Date(dd.date+"T12:00:00").getTime(),html:`<li><span class="ty">Injury</span><div class="sides"><div class="side"><b>${esc(i.name)}</b> <span>${esc(i.pos)} · ${esc(i.nfl)}</span> ${tag(i.from)} → ${tag(i.to,i.to==="Healthy"?"st":sev(i.to)==="bad"?"ir":"")}${i.starter?tag("Starter"):""}</div><div class="side">${teamBtn(i.roster,"tlink")}${i.body?` <span>· ${esc(i.body)}</span>`:""}</div><span class="meta">${esc(day(dd.date))}</span></div></li>`})));
+  const feed=[...(LW.moves||[]).map(mv),...inj].sort((a,b)=>b.ts-a.ts);
+  $("lwfeed").innerHTML=feed.length?feed.map(x=>x.html).join(""):`<li><span class="ty">Quiet</span><div class="sides"><div class="side"><span>No moves or injury changes in the last 7 days.</span></div></div></li>`;
+  $("lwrep").innerHTML=(LW.report||[]).length?LW.report.map(i=>`<li><span class="ty">${tag(i.status,sev(i.status)==="bad"?"ir":"")}</span><div class="sides"><div class="side"><b>${esc(i.name)}</b> <span>${esc(i.pos)} · ${esc(i.nfl)}${i.body?" · "+esc(i.body):""}</span>${i.starter?tag("Starter","st"):""}</div><div class="side">${teamBtn(i.roster,"tlink")}</div></div></li>`).join(""):`<li><span class="ty">Clear</span><div class="sides"><div class="side"><span>No rostered player has an injury designation.</span></div></div></li>`;
+})();
 $("awhead").textContent=`Week ${W} Awards`;
 $("awlist").innerHTML=E.awards.map(a=>`<div class="award"><div class="an">${esc(a.a)}</div><div class="who">${lk(a.who)}</div><p>${lk(a.p)}</p></div>`).join("")+(recapNow?`<a class="award" href="${esc(recapHref(W))}"${ext(recapHref(W))} style="text-decoration:none"><div class="an">Every award →</div><p>The full list, with matchup breakdowns and game-flow charts, is in the Week ${W} recap.</p></a>`:"");
 

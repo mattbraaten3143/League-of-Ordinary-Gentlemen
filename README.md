@@ -27,6 +27,7 @@ vercel.json              hosting settings, including the /sleeper pass-through t
 |---|---|---|
 | Someone opens the site | `live.js` pulls current records, standings and scores from Sleeper; ticker refreshes every minute during games | the visitor's browser |
 | Every morning, about 5 AM Central | `refresh.py` pulls Sleeper, FantasyCalc and Dynasty Daddy; `news.py` writes news items for trades, $10+ waiver adds and renames; `recap_prep.py` gathers the facts for last week's recap once the week is over (Tuesday); page rebuilt and committed | GitHub Actions (`.github/workflows/refresh.yml`) |
+| Every 2 hours | `league_wire.py`: league moves from the last 7 days, injury designation changes for rostered players, and the current injury report (News → League Wire) | GitHub Actions (`.github/workflows/league-wire.yml`) |
 | Every morning, about 7:43 AM Central | **OGSN Writer** (Claude scheduled task, runs in the cloud, approves itself): writes the weekly recap when facts are waiting, writes headlines and takes for new trades, then mirrors the site to the Claude artifact | Claude cloud |
 | Every commit | Vercel redeploys the site | Vercel |
 
