@@ -42,9 +42,11 @@ vercel.json              hosting settings, including the /sleeper pass-through t
 
 ## Keeping it in step with the artifact (for now)
 
-The weekly recaps and editorial are still written into the artifact. To bring them over, copy the
-artifact's `data/league-data.json` and `src/hub_template.txt` into `public/data/` and `scripts/`,
-then run `python3 scripts/build_site.py` and commit. (Next step: have the recap task publish here directly.)
+The weekly recaps and editorial are still written into the artifact by the "OGSN Daily Refresh"
+scheduled task (10:00 AM Central). A second scheduled task, "OGSN Website Sync" (11:23 AM Central),
+copies the artifact's `data/league-data.json`, `src/hub_template.txt` and any new photos into this
+repo, rebuilds, and pushes. `scripts/artifact_sync.json` records the last artifact version synced,
+so a day with no artifact change does nothing.
 
 ## Local preview
 
