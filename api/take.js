@@ -40,12 +40,17 @@ function allow(key, [n, ms]) {
 const json = (obj, status = 200) => new Response(JSON.stringify(obj), {
   status, headers: { "content-type": "application/json", "cache-control": "no-store" } });
 
+// Tolerate whitespace or quotes picked up when the key was pasted into Vercel
+const apiKey = () => (process.env.ANTHROPIC_API_KEY || "").trim().replace(/^["']|["']$/g, "");
+
 export function GET() {
-  return json({ ok: !!process.env.ANTHROPIC_API_KEY });
+  const k = apiKey();
+  // shape only, never the key: lets the owner spot a mis-pasted value
+  return json({ ok: !!k, keyShape: k ? { prefix: k.slice(0, 7), length: k.length } : null });
 }
 
 export async function POST(request) {
-  const key = process.env.ANTHROPIC_API_KEY;
+  const key = apiKey();
   if (!key) return json({ error: "not configured" }, 503);
 
   // Only this site's own pages may call it
