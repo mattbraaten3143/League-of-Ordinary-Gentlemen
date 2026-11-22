@@ -1,0 +1,32 @@
+# Manual check: gather recap facts for a finished week and print a summary. Commits nothing.
+name: Recap facts check
+
+on:
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "Week to check"
+        required: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Gather facts and odds
+        run: |
+          python3 scripts/refresh.py recapdata --week "${{ inputs.week }}" --out /tmp/facts.json
+          python3 scripts/refresh.py recapodds --week "${{ inputs.week }}" --data public/data/league-data.json --facts /tmp/facts.json --out /tmp/odds.json
+          python3 - <<'PY'
+          import json
+          f = json.load(open("/tmp/facts.json")); o = json.load(open("/tmp/odds.json"))
+          print("games", len(f["games"]), "teams", len(f["teams"]), "nflGames", len(f["nflGames"]))
+          for g in f["games"]:
+              a, b = g["teams"]; A, B = f["teams"][str(a)], f["teams"][str(b)]
+              print(f'{A["name"]} {A["points"]} flow {A["flow"]}  vs  {B["name"]} {B["points"]} flow {B["flow"]}')
+          print("odds teams", len(o["teams"]))
+          PY
