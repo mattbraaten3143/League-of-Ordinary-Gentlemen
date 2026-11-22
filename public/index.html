@@ -233,6 +233,9 @@ tr.me td{background:color-mix(in srgb,var(--flag) 14%,transparent)}
 #league-wire .side .rb.ir{color:var(--oxblood-ink)}
 #league-wire .ty .rb{margin-left:0;white-space:nowrap}
 #lwrep li{grid-template-columns:6.8rem minmax(0,1fr)}
+#lwrep li.lwlong{display:block;padding:.6rem .8rem}
+#lwrep li.lwlong summary{cursor:pointer;font-family:var(--ui);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+#lwrep li.lwlong ul{margin-top:.5rem;border-top:1px solid var(--rule)}
 .filters{display:flex;gap:.3rem;flex-wrap:wrap}
 .filters button{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--rule);background:var(--paper);padding:.2rem .5rem;cursor:pointer}
 .filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -1188,7 +1191,10 @@ $("heads").innerHTML=headItems()+older.map(s=>{const h=recapHref(s.week);return 
   const inj=[];(LW.days||[]).forEach(dd=>dd.items.forEach(i=>inj.push({ts:new Date(dd.date+"T12:00:00").getTime(),html:`<li><span class="ty">Injury</span><div class="sides"><div class="side"><b>${esc(i.name)}</b> <span>${esc(i.pos)} · ${esc(i.nfl)}</span> ${tag(i.from)} → ${tag(i.to,i.to==="Healthy"?"st":sev(i.to)==="bad"?"ir":"")}${i.starter?tag("Starter"):""}</div><div class="side">${teamBtn(i.roster,"tlink")}${i.body?` <span>· ${esc(i.body)}</span>`:""}</div><span class="meta">${esc(day(dd.date))}</span></div></li>`})));
   const feed=[...(LW.moves||[]).map(mv),...inj].sort((a,b)=>b.ts-a.ts);
   $("lwfeed").innerHTML=feed.length?feed.map(x=>x.html).join(""):`<li><span class="ty">Quiet</span><div class="sides"><div class="side"><span>No moves or injury changes in the last 7 days.</span></div></div></li>`;
-  $("lwrep").innerHTML=(LW.report||[]).length?LW.report.map(i=>`<li><span class="ty">${tag(i.status,sev(i.status)==="bad"?"ir":"")}</span><div class="sides"><div class="side"><b>${esc(i.name)}</b> <span>${esc(i.pos)} · ${esc(i.nfl)}${i.body?" · "+esc(i.body):""}</span>${i.starter?tag("Starter","st"):""}</div><div class="side">${teamBtn(i.roster,"tlink")}</div></div></li>`).join(""):`<li><span class="ty">Clear</span><div class="sides"><div class="side"><span>No rostered player has an injury designation.</span></div></div></li>`;
+  const repRow=i=>`<li><span class="ty">${tag(i.status,sev(i.status)==="bad"?"ir":"")}</span><div class="sides"><div class="side"><b>${esc(i.name)}</b> <span>${esc(i.pos)} · ${esc(i.nfl)}${i.body?" · "+esc(i.body):""}</span>${i.starter?tag("Starter","st"):""}</div><div class="side">${teamBtn(i.roster,"tlink")}</div></div></li>`;
+  const rep=LW.report||[], longTerm=rep.filter(i=>/^(IR|PUP|DNR|NA)$/.test(i.status)), now=rep.filter(i=>!longTerm.includes(i));
+  $("lwrep").innerHTML=(now.length?now.map(repRow).join(""):`<li><span class="ty">Clear</span><div class="sides"><div class="side"><span>No rostered player is Out, Doubtful or Questionable.</span></div></div></li>`)+
+    (longTerm.length?`<li class="lwlong"><details><summary>On IR and other long-term lists (${longTerm.length})</summary><ul class="wire">${longTerm.map(repRow).join("")}</ul></details></li>`:"");
 })();
 $("awhead").textContent=`Week ${W} Awards`;
 $("awlist").innerHTML=E.awards.map(a=>`<div class="award"><div class="an">${esc(a.a)}</div><div class="who">${lk(a.who)}</div><p>${lk(a.p)}</p></div>`).join("")+(recapNow?`<a class="award" href="${esc(recapHref(W))}"${ext(recapHref(W))} style="text-decoration:none"><div class="an">Every award →</div><p>The full list, with matchup breakdowns and game-flow charts, is in the Week ${W} recap.</p></a>`:"");
