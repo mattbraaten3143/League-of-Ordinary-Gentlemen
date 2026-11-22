@@ -21,15 +21,21 @@ scripts/
 vercel.json              hosting settings, including the /sleeper pass-through to Sleeper's API
 ```
 
-## How the data stays fresh
+## How it runs (no one has to do anything)
 
-- **When someone opens the site:** `live.js` asks Sleeper for the current records, points,
-  standings and any finished weeks the built-in data doesn't have yet, then draws the page.
-  If Sleeper doesn't answer within 4 seconds, the page draws from the built-in data instead.
-- **During games:** the score ticker shows this week's matchups and refreshes every minute.
-- **Every morning (about 5 AM Central):** GitHub runs `refresh.py` for new values, trades,
-  power rankings and playoff odds, rebuilds the page and commits. Vercel redeploys automatically.
-  It can also be run on demand from the repo's **Actions** tab → *Daily data refresh* → *Run workflow*.
+| When | What | Where |
+|---|---|---|
+| Someone opens the site | `live.js` pulls current records, standings and scores from Sleeper; ticker refreshes every minute during games | the visitor's browser |
+| Every morning, about 5 AM Central | `refresh.py` pulls Sleeper, FantasyCalc and Dynasty Daddy; `news.py` writes news items for trades, $10+ waiver adds and renames; `recap_prep.py` gathers the facts for last week's recap once the week is over (Tuesday); page rebuilt and committed | GitHub Actions (`.github/workflows/refresh.yml`) |
+| Every morning, about 7:43 AM Central | **OGSN Writer** (Claude scheduled task, runs in the cloud, approves itself): writes the weekly recap when facts are waiting, writes headlines and takes for new trades, then mirrors the site to the Claude artifact | Claude cloud |
+| Every commit | Vercel redeploys the site | Vercel |
+
+Nothing runs on Matt's computer. If Sleeper is down in the morning, the refresh keeps yesterday's data and tries again the next day.
+
+### The recap pipeline
+1. `recap_prep.py` writes `recaps/week-N-facts.json` (every starter, bench, best lineup, game-flow by window, top performances, transactions) and `recaps/week-N-odds.json` (playoff odds before and after).
+2. The writer reads those plus the site data and writes `recaps/week-N-draft.json`: the words only.
+3. `apply_writing.py recap` checks the draft (every matchup covered, winners right, at least 6 awards, plain text) and fills in names, records, scores and game-flow numbers from the facts, so the numbers on the page never come from the writer. Then `build_site.py` and push.
 
 ## Going live (one-time setup)
 
@@ -40,13 +46,10 @@ vercel.json              hosting settings, including the /sleeper pass-through t
    Read and write permissions** (lets the morning refresh commit).
 4. Optional: buy a domain and add it under the Vercel project's **Settings → Domains**.
 
-## Keeping it in step with the artifact (for now)
+## The Claude artifact
 
-The weekly recaps and editorial are still written into the artifact by the "OGSN Daily Refresh"
-scheduled task (10:00 AM Central). A second scheduled task, "OGSN Website Sync" (11:23 AM Central),
-copies the artifact's `data/league-data.json`, `src/hub_template.txt` and any new photos into this
-repo, rebuilds, and pushes. `scripts/artifact_sync.json` records the last artifact version synced,
-so a day with no artifact change does nothing.
+The artifact at claude.ai is now a mirror: the writer republishes it from this repo's data whenever
+the data changes. Edit the site here, not there. `scripts/artifact_mirror.json` records the last version mirrored.
 
 ## Local preview
 
