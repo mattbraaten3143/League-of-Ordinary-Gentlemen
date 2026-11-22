@@ -38,6 +38,21 @@ HEAD = """<!doctype html>
 <body>
 """
 TAIL = """
+<style>
+/* Website and installed app only. iPhone app: the page runs under the status bar (black-translucent),
+   so the sticky header carries the safe-area space itself and the bottom clears the home bar. */
+.top{padding-top:env(safe-area-inset-top,0px);top:0!important}
+body{padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (max-width:600px){
+  .top .logo{display:none}
+  .top .shell{padding-inline:max(6px,env(safe-area-inset-left,0px));min-height:0;padding-block:0}
+  .top nav{gap:0;justify-content:space-between;width:100%;flex-wrap:nowrap}
+  .top nav .nt{font-size:.66rem;letter-spacing:.04em;padding:.85rem .2rem}
+  .top nav .nt .car{display:none}
+  .strip{-webkit-mask-image:linear-gradient(90deg,transparent,#000 .5rem,#000 calc(100% - .5rem),transparent);mask-image:linear-gradient(90deg,transparent,#000 .5rem,#000 calc(100% - .5rem),transparent)}
+}
+@media (max-width:370px){.top nav .nt{font-size:.6rem;letter-spacing:.02em;padding-inline:.12rem}}
+</style>
 <script src="/live.js?v=__LIVE_V__"></script>
 <script src="/livehub.js?v=__HUB_V__"></script>
 </body>

@@ -149,7 +149,7 @@
   function appPanel() {
     var inst = standalone() ? '<p class="lv-ok">Installed. You are using the app.</p>'
       : window.__ogsnInstall ? '<button type="button" class="btn solid" id="lvinstall">Install the app</button>'
-      : isIOS ? '<p>On iPhone or iPad: open this site in <b>Safari</b>, tap <b>Share</b> <span aria-hidden="true">⎋</span>, then <b>Add to Home Screen</b>.</p>'
+      : isIOS ? '<p>On iPhone or iPad: open this site in <b>Safari</b>, tap the <b>Share</b> button (the square with an arrow pointing up), then <b>Add to Home Screen</b>.</p>'
       : '<p>Use your browser\'s <b>Install</b> option (the icon at the right of the address bar, or the menu) to add OGSN as an app.</p>';
     var al;
     if (!P.supported) al = isIOS && !standalone() ? "<p>On iPhone, alerts work in the installed app. Add OGSN to your Home Screen first, open it from there, then turn alerts on.</p>" : "<p>This browser does not support notifications.</p>";
