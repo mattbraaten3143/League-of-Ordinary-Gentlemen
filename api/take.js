@@ -2,7 +2,7 @@
 // The browser sends only the calculator's facts for the two sides; the prompt and the
 // API key live here, so the endpoint can't be used as a general-purpose chatbot.
 //   GET  /api/take  -> {ok: true} when the key is configured (the page shows the button only then)
-//   POST /api/take  {sides: [...]} -> streamed plain text
+//   POST /api/take  {sides: [...]} -> the take as plain text
 
 const MODEL = process.env.TAKE_MODEL || "claude-haiku-5-5";
 const MAX_BODY = 30000;            // bytes of facts accepted
@@ -44,9 +44,7 @@ const json = (obj, status = 200) => new Response(JSON.stringify(obj), {
 const apiKey = () => (process.env.ANTHROPIC_API_KEY || "").trim().replace(/^["']|["']$/g, "");
 
 export function GET() {
-  const k = apiKey();
-  // shape only, never the key: lets the owner spot a mis-pasted value
-  return json({ ok: !!k, keyShape: k ? { prefix: k.slice(0, 7), length: k.length } : null });
+  return json({ ok: !!apiKey() });
 }
 
 export async function POST(request) {
@@ -73,45 +71,20 @@ export async function POST(request) {
     method: "POST",
     headers: { "x-api-key": key, "anthropic-version": "2023-06-01", "content-type": "application/json" },
     body: JSON.stringify({
-      model: MODEL, max_tokens: 700, stream: true,
+      model: MODEL, max_tokens: 2500,
       messages: [{ role: "user", content: PROMPT + JSON.stringify(sides, null, 1) }],
     }),
   });
-  if (!upstream.ok || !upstream.body) {
-    const detail = await upstream.text().catch(() => "");
-    console.error("anthropic error", upstream.status, detail.slice(0, 500));
+  const res = await upstream.json().catch(() => null);
+  if (!upstream.ok || !res) {
+    console.error("anthropic error", upstream.status, JSON.stringify(res).slice(0, 500));
     return json({ error: "upstream " + upstream.status }, 502);
   }
-
-  if (new URL(request.url).searchParams.get("debug") === "1") { // TEMP: raw upstream reply for troubleshooting
-    const rawText = await upstream.text();
-    return new Response(rawText.slice(0, 3000), { headers: { "content-type": "text/plain" } });
+  // The model may think first; only its text blocks are the take
+  const text = (res.content || []).filter(b => b.type === "text").map(b => b.text).join("").trim();
+  if (!text) {
+    console.error("empty take", res.stop_reason);
+    return json({ error: "empty answer (" + res.stop_reason + ")" }, 502);
   }
-  // Anthropic's event stream -> plain text
-  const dec = new TextDecoder(), enc = new TextEncoder();
-  let buf = "";
-  const out = new ReadableStream({
-    async start(controller) {
-      const reader = upstream.body.getReader();
-      try {
-        for (;;) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          buf += dec.decode(value, { stream: true });
-          let i;
-          while ((i = buf.indexOf("\n")) >= 0) {
-            const line = buf.slice(0, i).trim(); buf = buf.slice(i + 1);
-            if (!line.startsWith("data:")) continue;
-            let ev; try { ev = JSON.parse(line.slice(5)); } catch (e) { continue; }
-            if (ev.type === "content_block_delta" && ev.delta && ev.delta.type === "text_delta") controller.enqueue(enc.encode(ev.delta.text));
-          }
-        }
-      } catch (e) {
-        console.error("stream error", e);
-      } finally {
-        controller.close();
-      }
-    },
-  });
-  return new Response(out, { headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" } });
+  return new Response(text, { headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" } });
 }
