@@ -61,6 +61,15 @@ python3 -m http.server 8000 -d public
 Then open http://localhost:8000. Locally there is no `/sleeper` pass-through, so `live.js`
 calls Sleeper's API directly.
 
+## Live tab
+
+`#live` (public/livehub.js, website only): every matchup with live points, projections and NFL game
+clocks; expandable lineups; a watchlist of tracked players and pinned matchups saved in the visitor's
+browser (`ogsn-track`, `ogsn-pin`; the My Team pick keeps that team's matchup open); a scoring feed
+of point changes while the page is open. Refreshes every 30 seconds while NFL games are in progress,
+every 5 minutes otherwise. Data: Sleeper matchups and schedule, ESPN's public scoreboard for clocks
+(unofficial feed; if it fails, Sleeper's in-game/final status is used), and `proj` from the daily refresh.
+
 ## Claude's take (trade calculator)
 
 The calculator's "Claude's take" button calls `api/take.js`, a Vercel function that holds the prompt

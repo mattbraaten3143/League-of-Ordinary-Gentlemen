@@ -152,6 +152,8 @@
     var s = document.createElement("script");
     s.textContent = app.textContent;
     document.body.appendChild(s);
+    window.__ogsnReady = true;
+    document.dispatchEvent(new Event("ogsn:ready"));
   }
 
   function poll(week) {

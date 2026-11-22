@@ -33,6 +33,7 @@ HEAD = """<!doctype html>
 """
 TAIL = """
 <script src="/live.js?v=__LIVE_V__"></script>
+<script src="/livehub.js?v=__HUB_V__"></script>
 </body>
 </html>
 """
@@ -86,8 +87,9 @@ def build():
     assert "__LEAGUE_DATA__" in tpl, "template is missing __LEAGUE_DATA__"
     data = json.load(open(DATA, encoding="utf-8"))
     blob = json.dumps(data, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
+    hub_v = hashlib.sha256(open(os.path.join(ROOT, "public", "livehub.js"), "rb").read()).hexdigest()[:10]
     live_v = hashlib.sha256(open(os.path.join(ROOT, "public", "live.js"), "rb").read()).hexdigest()[:10]
-    html = HEAD + tpl.replace("__LEAGUE_DATA__", blob) + TAIL.replace("__LIVE_V__", live_v)
+    html = HEAD + tpl.replace("__LEAGUE_DATA__", blob) + TAIL.replace("__LIVE_V__", live_v).replace("__HUB_V__", hub_v)
     open(OUT, "w", encoding="utf-8").write(html)
     print(f"wrote {os.path.relpath(OUT, ROOT)} ({len(html) // 1024} KB, data through week {data['league']['week']})")
 
