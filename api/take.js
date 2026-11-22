@@ -83,6 +83,10 @@ export async function POST(request) {
     return json({ error: "upstream " + upstream.status }, 502);
   }
 
+  if (new URL(request.url).searchParams.get("debug") === "1") { // TEMP: raw upstream reply for troubleshooting
+    const rawText = await upstream.text();
+    return new Response(rawText.slice(0, 3000), { headers: { "content-type": "text/plain" } });
+  }
   // Anthropic's event stream -> plain text
   const dec = new TextDecoder(), enc = new TextEncoder();
   let buf = "";
