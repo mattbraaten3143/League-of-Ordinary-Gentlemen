@@ -1081,7 +1081,7 @@ sel.value=D.live?D.live.week:(D.weeks.length?D.weeks[D.weeks.length-1].week:W);
 function strip(wk){
   const w=D.weeks.find(x=>x.week==wk)||(D.live&&D.live.week==wk?D.live:null);
   const scores=w.games.map(g=>{const tie=g[0].pts===g[1].pts;
-    return `<div class="sc"><span class="st">${w.label||"FINAL"} · WK ${wk}${g[0].pts-g[1].pts<5?" · CLOSE":""}</span>${g.map((t,i)=>`<div class="ln ${tie?"":i?"l":"w"}">${teamBtn(t.id)}<span class="num">${f2(t.pts)}</span></div>`).join("")}</div>`;});
+    return `<div class="sc"><span class="st">${w.label||"FINAL"} · WK ${wk}${!w.state&&g[0].pts-g[1].pts<5?" · CLOSE":""}</span>${g.map((t,i)=>`<div class="ln ${tie?"":i?"l":"w"}">${teamBtn(t.id)}<span class="num">${f2(t.pts)}</span></div>`).join("")}</div>`;});
   const heads=+wk===W?[...NEWS.slice(0,3).map(s=>["Latest",s.h]),...cur.slice(0,3).map(s=>[s.tag,s.h])]
     .map(([t,h])=>`<div class="sc hd"><span class="st">${esc(t.toUpperCase())}</span><a href="#${slug(h)}">${esc(h)}</a></div>`):[];
   const items=[];scores.forEach((s,i)=>{items.push(s);if(i%2===1&&heads.length)items.push(heads.shift())});items.push(...heads);
