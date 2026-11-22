@@ -13,7 +13,7 @@ Each change below is a small find-and-replace; if the template changes so much t
 one no longer matches, the build stops and says which one, instead of shipping a
 half-patched page.
 """
-import json, os, sys
+import hashlib, json, os, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE = os.path.join(ROOT, "scripts", "hub_template.txt")
@@ -32,7 +32,7 @@ HEAD = """<!doctype html>
 <body>
 """
 TAIL = """
-<script src="/live.js"></script>
+<script src="/live.js?v=__LIVE_V__"></script>
 </body>
 </html>
 """
@@ -86,7 +86,8 @@ def build():
     assert "__LEAGUE_DATA__" in tpl, "template is missing __LEAGUE_DATA__"
     data = json.load(open(DATA, encoding="utf-8"))
     blob = json.dumps(data, separators=(",", ":"), ensure_ascii=False).replace("</", "<\\/")
-    html = HEAD + tpl.replace("__LEAGUE_DATA__", blob) + TAIL
+    live_v = hashlib.sha256(open(os.path.join(ROOT, "public", "live.js"), "rb").read()).hexdigest()[:10]
+    html = HEAD + tpl.replace("__LEAGUE_DATA__", blob) + TAIL.replace("__LIVE_V__", live_v)
     open(OUT, "w", encoding="utf-8").write(html)
     print(f"wrote {os.path.relpath(OUT, ROOT)} ({len(html) // 1024} KB, data through week {data['league']['week']})")
 
