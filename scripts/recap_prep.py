@@ -19,6 +19,19 @@ import refresh  # noqa: E402
 LAST_WEEK = 17
 
 
+def with_week(d, week, facts):
+    """The daily refresh adds a week's scores to the data only once its recap is posted (league.week moves),
+    so the week being recapped is usually missing. Add it from the facts, which have every final score."""
+    if any(w["week"] == week for w in d["weeks"]):
+        return d
+    games = []
+    for g in facts.get("games", []):
+        a, b = g["teams"]
+        pa, pb = facts["teams"][str(a)]["points"], facts["teams"][str(b)]["points"]
+        games.append(sorted([{"id": a, "pts": pa}, {"id": b, "pts": pb}], key=lambda x: -x["pts"]))
+    return {**d, "weeks": sorted(d["weeks"] + [{"week": week, "games": games}], key=lambda w: w["week"])}
+
+
 def main(data_path):
     d = json.load(open(data_path))
     st = d.get("nflState") or {}
@@ -46,8 +59,8 @@ def main(data_path):
         print(json.dumps({"recapPrep": f"week {week} facts failed: {e!r}"})); return
     json.dump(facts, open(facts_path, "w"), indent=1, ensure_ascii=False)
     try:
-        json.dump(refresh.recap_odds(d, week, facts), open(odds_path, "w"), indent=1, ensure_ascii=False)
-    except Exception as e:
+        json.dump(refresh.recap_odds(with_week(d, week, facts), week, facts), open(odds_path, "w"), indent=1, ensure_ascii=False)
+    except BaseException as e:  # odds are a bonus for the writer; never let them sink the refresh
         print(json.dumps({"recapPrep": f"week {week} odds failed (facts kept): {e!r}"}))
     print(json.dumps({"recapPrep": f"week {week} facts written", "files": [os.path.relpath(p, ROOT) for p in (facts_path, odds_path) if os.path.exists(p)]}))
 
