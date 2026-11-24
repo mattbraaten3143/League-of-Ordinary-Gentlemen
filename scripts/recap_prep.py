@@ -27,7 +27,9 @@ def with_week(d, week, facts):
     games = []
     for g in facts.get("games", []):
         a, b = g["teams"]
-        pa, pb = facts["teams"][str(a)]["points"], facts["teams"][str(b)]["points"]
+        ft = facts["teams"]
+        pt = lambda i: (ft.get(i) or ft.get(str(i)))["points"]  # int keys in memory, str keys once saved as JSON
+        pa, pb = pt(a), pt(b)
         games.append(sorted([{"id": a, "pts": pa}, {"id": b, "pts": pb}], key=lambda x: -x["pts"]))
     return {**d, "weeks": sorted(d["weeks"] + [{"week": week, "games": games}], key=lambda w: w["week"])}
 

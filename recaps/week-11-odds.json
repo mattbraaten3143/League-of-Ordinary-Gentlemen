@@ -1,0 +1,222 @@
+{
+ "week": 11,
+ "note": "Odds in percent from 10,000 simulated seasons. 'before' replays this week with the same rosters; small swings are noise.",
+ "teams": {
+  "Matty Ice": {
+   "before": {
+    "rank": 12,
+    "record": "1-9",
+    "gamesBackOfLastPlayoffSpot": 4.0,
+    "playoffs": 0,
+    "bye": 0,
+    "title": 0
+   },
+   "after": {
+    "rank": 12,
+    "record": "2-9",
+    "gamesBackOfLastPlayoffSpot": 4.0,
+    "playoffs": 0,
+    "bye": 0,
+    "title": 0
+   }
+  },
+  "Murrdawgs Massage Parlor": {
+   "before": {
+    "rank": 1,
+    "record": "7-3",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 100,
+    "bye": 65,
+    "title": 31
+   },
+   "after": {
+    "rank": 1,
+    "record": "8-3",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 100,
+    "bye": 85,
+    "title": 34
+   }
+  },
+  "Cheesehead10": {
+   "before": {
+    "rank": 8,
+    "record": "5-5",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 29,
+    "bye": 0,
+    "title": 0
+   },
+   "after": {
+    "rank": 8,
+    "record": "5-6",
+    "gamesBackOfLastPlayoffSpot": 1.0,
+    "playoffs": 15,
+    "bye": 0,
+    "title": 0
+   }
+  },
+  "Bad Bunny's Bush": {
+   "before": {
+    "rank": 3,
+    "record": "7-3",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 100,
+    "bye": 38,
+    "title": 12
+   },
+   "after": {
+    "rank": 2,
+    "record": "8-3",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 100,
+    "bye": 45,
+    "title": 13
+   }
+  },
+  "CeeDeez Nutz": {
+   "before": {
+    "rank": 7,
+    "record": "5-5",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 37,
+    "bye": 0,
+    "title": 1
+   },
+   "after": {
+    "rank": 6,
+    "record": "6-5",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 63,
+    "bye": 0,
+    "title": 1
+   }
+  },
+  "PerryCock": {
+   "before": {
+    "rank": 5,
+    "record": "5-5",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 81,
+    "bye": 3,
+    "title": 11
+   },
+   "after": {
+    "rank": 5,
+    "record": "6-5",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 89,
+    "bye": 4,
+    "title": 12
+   }
+  },
+  "Geno-Cide Smith": {
+   "before": {
+    "rank": 6,
+    "record": "5-5",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 25,
+    "bye": 0,
+    "title": 1
+   },
+   "after": {
+    "rank": 7,
+    "record": "6-5",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 27,
+    "bye": 0,
+    "title": 1
+   }
+  },
+  "PhilthyPhil": {
+   "before": {
+    "rank": 2,
+    "record": "7-3",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 100,
+    "bye": 60,
+    "title": 21
+   },
+   "after": {
+    "rank": 3,
+    "record": "7-4",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 100,
+    "bye": 50,
+    "title": 20
+   }
+  },
+  "Bijan al Gaib": {
+   "before": {
+    "rank": 4,
+    "record": "7-3",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 99,
+    "bye": 35,
+    "title": 22
+   },
+   "after": {
+    "rank": 4,
+    "record": "7-4",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 97,
+    "bye": 15,
+    "title": 19
+   }
+  },
+  "Open for Business": {
+   "before": {
+    "rank": 10,
+    "record": "4-6",
+    "gamesBackOfLastPlayoffSpot": 1.0,
+    "playoffs": 3,
+    "bye": 0,
+    "title": 0
+   },
+   "after": {
+    "rank": 10,
+    "record": "4-7",
+    "gamesBackOfLastPlayoffSpot": 2.0,
+    "playoffs": 0,
+    "bye": 0,
+    "title": 0
+   }
+  },
+  "ChrisUMD23": {
+   "before": {
+    "rank": 11,
+    "record": "3-7",
+    "gamesBackOfLastPlayoffSpot": 2.0,
+    "playoffs": 0,
+    "bye": 0,
+    "title": 0
+   },
+   "after": {
+    "rank": 11,
+    "record": "3-8",
+    "gamesBackOfLastPlayoffSpot": 3.0,
+    "playoffs": 0,
+    "bye": 0,
+    "title": 0
+   }
+  },
+  "degr": {
+   "before": {
+    "rank": 9,
+    "record": "4-6",
+    "gamesBackOfLastPlayoffSpot": 1.0,
+    "playoffs": 25,
+    "bye": 0,
+    "title": 1
+   },
+   "after": {
+    "rank": 9,
+    "record": "4-7",
+    "gamesBackOfLastPlayoffSpot": 2.0,
+    "playoffs": 9,
+    "bye": 0,
+    "title": 0
+   }
+  }
+ }
+}
