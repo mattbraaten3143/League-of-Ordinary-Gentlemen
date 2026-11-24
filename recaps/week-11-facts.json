@@ -1,0 +1,2524 @@
+{
+ "week": 11,
+ "season": "2026",
+ "playoffWeekStart": 15,
+ "windows": [
+  "Start",
+  "Thu–Sat",
+  "Sun early",
+  "Sun late",
+  "SNF",
+  "MNF"
+ ],
+ "nflGames": [
+  {
+   "away": "IND",
+   "home": "HOU",
+   "day": "Thursday",
+   "time": "20:15",
+   "location": "Home",
+   "score": "3-26",
+   "window": "Thu–Sat"
+  },
+  {
+   "away": "MIA",
+   "home": "BUF",
+   "day": "Sunday",
+   "time": "13:00",
+   "location": "Home",
+   "score": "9-26",
+   "window": "Sun early"
+  },
+  {
+   "away": "BAL",
+   "home": "CAR",
+   "day": "Sunday",
+   "time": "13:00",
+   "location": "Home",
+   "score": "33-35",
+   "window": "Sun early"
+  },
+  {
+   "away": "NO",
+   "home": "CHI",
+   "day": "Sunday",
+   "time": "13:00",
+   "location": "Home",
+   "score": "13-21",
+   "window": "Sun early"
+  },
+  {
+   "away": "TEN",
+   "home": "DAL",
+   "day": "Sunday",
+   "time": "13:00",
+   "location": "Home",
+   "score": "30-51",
+   "window": "Sun early"
+  },
+  {
+   "away": "TB",
+   "home": "DET",
+   "day": "Sunday",
+   "time": "13:00",
+   "location": "Home",
+   "score": "21-31",
+   "window": "Sun early"
+  },
+  {
+   "away": "ARI",
+   "home": "KC",
+   "day": "Sunday",
+   "time": "13:00",
+   "location": "Home",
+   "score": "7-34",
+   "window": "Sun early"
+  },
+  {
+   "away": "PIT",
+   "home": "PHI",
+   "day": "Sunday",
+   "time": "13:00",
+   "location": "Home",
+   "score": "16-19",
+   "window": "Sun early"
+  },
+  {
+   "away": "NYJ",
+   "home": "LAC",
+   "day": "Sunday",
+   "time": "16:05",
+   "location": "Home",
+   "score": "27-24",
+   "window": "Sun late"
+  },
+  {
+   "away": "LV",
+   "home": "DEN",
+   "day": "Sunday",
+   "time": "16:25",
+   "location": "Home",
+   "score": "24-38",
+   "window": "Sun late"
+  },
+  {
+   "away": "JAX",
+   "home": "NYG",
+   "day": "Sunday",
+   "time": "16:25",
+   "location": "Home",
+   "score": "18-23",
+   "window": "Sun late"
+  },
+  {
+   "away": "MIN",
+   "home": "SF",
+   "day": "Sunday",
+   "time": "20:20",
+   "location": "Neutral",
+   "score": "10-35",
+   "window": "SNF"
+  },
+  {
+   "away": "CIN",
+   "home": "WAS",
+   "day": "Monday",
+   "time": "20:15",
+   "location": "Home",
+   "score": "20-22",
+   "window": "MNF"
+  }
+ ],
+ "teams": {
+  "1": {
+   "name": "Matty Ice",
+   "matchup": 2,
+   "points": 105.55,
+   "flow": [
+    0.0,
+    4.9,
+    31.5,
+    91.85,
+    91.85,
+    105.55
+   ],
+   "starters": [
+    {
+     "name": "Fernando Mendoza",
+     "pos": "QB",
+     "nfl": "LV",
+     "window": "Sun late",
+     "pts": 31.55,
+     "proj": 15.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Emari Demercado",
+     "pos": "RB",
+     "nfl": "HOU",
+     "window": "Thu–Sat",
+     "pts": 4.9,
+     "proj": 7.5,
+     "injuryNow": null
+    },
+    {
+     "name": "Samaje Perine",
+     "pos": "RB",
+     "nfl": "CIN",
+     "window": "MNF",
+     "pts": 13.7,
+     "proj": 7.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Malik Nabers",
+     "pos": "WR",
+     "nfl": "NYG",
+     "window": "Sun late",
+     "pts": 18.5,
+     "proj": 15.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Tetairoa McMillan",
+     "pos": "WR",
+     "nfl": "CAR",
+     "window": "Sun early",
+     "pts": 19.1,
+     "proj": 14.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Jordyn Tyson",
+     "pos": "WR",
+     "nfl": "NO",
+     "window": "Sun early",
+     "pts": 2.0,
+     "proj": 10.7,
+     "injuryNow": null
+    },
+    {
+     "name": "David Njoku",
+     "pos": "TE",
+     "nfl": "LAC",
+     "window": "Sun late",
+     "pts": 4.1,
+     "proj": 4.6,
+     "injuryNow": "Questionable (Shoulder)"
+    },
+    {
+     "name": "Pat Bryant",
+     "pos": "WR",
+     "nfl": "DEN",
+     "window": "Sun late",
+     "pts": 6.2,
+     "proj": 8.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Zonovan Knight",
+     "pos": "RB",
+     "nfl": "ARI",
+     "window": "Sun early",
+     "pts": 5.5,
+     "proj": 7.1,
+     "injuryNow": null
+    }
+   ],
+   "bench": [
+    {
+     "name": "Jack Bech",
+     "pos": "WR",
+     "nfl": "LV",
+     "pts": 22.8,
+     "proj": 5.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Zavion Thomas",
+     "pos": "WR",
+     "nfl": "CHI",
+     "pts": 10.6,
+     "proj": 3.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Austin Ekeler",
+     "pos": "RB",
+     "nfl": "WAS",
+     "pts": 6.4,
+     "proj": 4.6,
+     "injuryNow": null
+    },
+    {
+     "name": "CJ Donaldson",
+     "pos": "RB",
+     "nfl": "NO",
+     "pts": 3.7,
+     "proj": 2.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Bryce Lance",
+     "pos": "WR",
+     "nfl": "NO",
+     "pts": 0.0,
+     "proj": 0.1,
+     "injuryNow": null
+    }
+   ],
+   "zeroStarters": [],
+   "bestLineup": 132.95,
+   "leftOnBench": 27.4,
+   "bestLineupPlayers": [
+    "Fernando Mendoza",
+    "Samaje Perine",
+    "Austin Ekeler",
+    "Jack Bech",
+    "Tetairoa McMillan",
+    "Malik Nabers",
+    "David Njoku",
+    "Zavion Thomas",
+    "Pat Bryant"
+   ]
+  },
+  "2": {
+   "name": "Murrdawgs Massage Parlor",
+   "matchup": 5,
+   "points": 118.3,
+   "flow": [
+    0.0,
+    0.0,
+    20.4,
+    37.6,
+    80.9,
+    118.3
+   ],
+   "starters": [
+    {
+     "name": "Joe Burrow",
+     "pos": "QB",
+     "nfl": "CIN",
+     "window": "MNF",
+     "pts": 28.9,
+     "proj": 35.3,
+     "injuryNow": null
+    },
+    {
+     "name": "Tony Pollard",
+     "pos": "RB",
+     "nfl": "TEN",
+     "window": "Sun early",
+     "pts": 13.0,
+     "proj": 17.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Cam Skattebo",
+     "pos": "RB",
+     "nfl": "NYG",
+     "window": "Sun late",
+     "pts": 5.8,
+     "proj": 16.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Mike Evans",
+     "pos": "WR",
+     "nfl": "SF",
+     "window": "SNF",
+     "pts": 24.9,
+     "proj": 13.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Garrett Wilson",
+     "pos": "WR",
+     "nfl": "NYJ",
+     "window": "Sun late",
+     "pts": 6.9,
+     "proj": 15.7,
+     "injuryNow": null
+    },
+    {
+     "name": "Stefon Diggs",
+     "pos": "WR",
+     "nfl": "WAS",
+     "window": "MNF",
+     "pts": 8.5,
+     "proj": 13.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Isaiah Likely",
+     "pos": "TE",
+     "nfl": "NYG",
+     "window": "Sun late",
+     "pts": 4.5,
+     "proj": 14.6,
+     "injuryNow": null
+    },
+    {
+     "name": "George Kittle",
+     "pos": "TE",
+     "nfl": "SF",
+     "window": "SNF",
+     "pts": 18.4,
+     "proj": 12.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Rico Dowdle",
+     "pos": "RB",
+     "nfl": "PIT",
+     "window": "Sun early",
+     "pts": 7.4,
+     "proj": 9.5,
+     "injuryNow": null
+    }
+   ],
+   "bench": [
+    {
+     "name": "Tyler Shough",
+     "pos": "QB",
+     "nfl": "NO",
+     "pts": 18.5,
+     "proj": 19.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Chris Rodriguez Jr.",
+     "pos": "RB",
+     "nfl": "JAX",
+     "pts": 5.1,
+     "proj": 5.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Myles Price",
+     "pos": "WR",
+     "nfl": "MIN",
+     "pts": 4.6,
+     "proj": null,
+     "injuryNow": null
+    },
+    {
+     "name": "Tez Johnson",
+     "pos": "WR",
+     "nfl": "TB",
+     "pts": 3.7,
+     "proj": 6.7,
+     "injuryNow": null
+    },
+    {
+     "name": "Tyler Allgeier",
+     "pos": "RB",
+     "nfl": "ARI",
+     "pts": 2.3,
+     "proj": 8.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Deion Burks",
+     "pos": "WR",
+     "nfl": "IND",
+     "pts": 0.0,
+     "proj": 4.0,
+     "injuryNow": null
+    }
+   ],
+   "zeroStarters": [],
+   "bestLineup": 118.9,
+   "leftOnBench": 0.6,
+   "bestLineupPlayers": [
+    "Joe Burrow",
+    "Tony Pollard",
+    "Rico Dowdle",
+    "Mike Evans",
+    "Stefon Diggs",
+    "Garrett Wilson",
+    "George Kittle",
+    "Cam Skattebo",
+    "Chris Rodriguez Jr."
+   ]
+  },
+  "3": {
+   "name": "Cheesehead10",
+   "matchup": 1,
+   "points": 100.95,
+   "flow": [
+    0.0,
+    0.0,
+    49.7,
+    70.4,
+    70.4,
+    100.95
+   ],
+   "starters": [
+    {
+     "name": "Jayden Daniels",
+     "pos": "QB",
+     "nfl": "WAS",
+     "window": "MNF",
+     "pts": 19.95,
+     "proj": 27.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Rachaad White",
+     "pos": "RB",
+     "nfl": "WAS",
+     "window": "MNF",
+     "pts": 0.0,
+     "proj": 8.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Will Shipley",
+     "pos": "RB",
+     "nfl": "PHI",
+     "window": "Sun early",
+     "pts": 0.9,
+     "proj": 3.4,
+     "injuryNow": "Questionable (Illness)"
+    },
+    {
+     "name": "Emeka Egbuka",
+     "pos": "WR",
+     "nfl": "TB",
+     "window": "Sun early",
+     "pts": 3.8,
+     "proj": 10.2,
+     "injuryNow": null
+    },
+    {
+     "name": "Jameson Williams",
+     "pos": "WR",
+     "nfl": "DET",
+     "window": "Sun early",
+     "pts": 19.3,
+     "proj": 12.3,
+     "injuryNow": null
+    },
+    {
+     "name": "Carnell Tate",
+     "pos": "WR",
+     "nfl": "TEN",
+     "window": "Sun early",
+     "pts": 13.8,
+     "proj": 13.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Colston Loveland",
+     "pos": "TE",
+     "nfl": "CHI",
+     "window": "Sun early",
+     "pts": 11.9,
+     "proj": 10.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Ladd McConkey",
+     "pos": "WR",
+     "nfl": "LAC",
+     "window": "Sun late",
+     "pts": 20.7,
+     "proj": 12.2,
+     "injuryNow": null
+    },
+    {
+     "name": "Chig Okonkwo",
+     "pos": "TE",
+     "nfl": "WAS",
+     "window": "MNF",
+     "pts": 10.6,
+     "proj": 10.4,
+     "injuryNow": null
+    }
+   ],
+   "bench": [
+    {
+     "name": "Josh Cameron",
+     "pos": "WR",
+     "nfl": "JAX",
+     "pts": 7.4,
+     "proj": 3.7,
+     "injuryNow": null
+    },
+    {
+     "name": "Tre' Harris",
+     "pos": "WR",
+     "nfl": "LAC",
+     "pts": 4.8,
+     "proj": 6.3,
+     "injuryNow": null
+    },
+    {
+     "name": "Oscar Delp",
+     "pos": "TE",
+     "nfl": "NO",
+     "pts": 1.6,
+     "proj": 2.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Michael Mayer",
+     "pos": "TE",
+     "nfl": "LV",
+     "pts": 1.4,
+     "proj": 11.1,
+     "injuryNow": null
+    }
+   ],
+   "zeroStarters": [
+    "Rachaad White"
+   ],
+   "bestLineup": 104.55,
+   "leftOnBench": 3.6,
+   "bestLineupPlayers": [
+    "Jayden Daniels",
+    "Will Shipley",
+    "Audric Estime",
+    "Ladd McConkey",
+    "Jameson Williams",
+    "Carnell Tate",
+    "Colston Loveland",
+    "Chig Okonkwo",
+    "Josh Cameron"
+   ]
+  },
+  "4": {
+   "name": "Bad Bunny's Bush",
+   "matchup": 1,
+   "points": 104.2,
+   "flow": [
+    0.0,
+    6.7,
+    82.5,
+    91.9,
+    91.9,
+    104.2
+   ],
+   "starters": [
+    {
+     "name": "Josh Allen",
+     "pos": "QB",
+     "nfl": "BUF",
+     "window": "Sun early",
+     "pts": 19.2,
+     "proj": 29.5,
+     "injuryNow": null
+    },
+    {
+     "name": "D'Andre Swift",
+     "pos": "RB",
+     "nfl": "CHI",
+     "window": "Sun early",
+     "pts": 11.9,
+     "proj": 19.2,
+     "injuryNow": null
+    },
+    {
+     "name": "Jaylen Warren",
+     "pos": "RB",
+     "nfl": "PIT",
+     "window": "Sun early",
+     "pts": 4.9,
+     "proj": 15.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Tee Higgins",
+     "pos": "WR",
+     "nfl": "CIN",
+     "window": "MNF",
+     "pts": 12.3,
+     "proj": 19.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Khalil Shakir",
+     "pos": "WR",
+     "nfl": "BUF",
+     "window": "Sun early",
+     "pts": 17.3,
+     "proj": 10.5,
+     "injuryNow": null
+    },
+    {
+     "name": "Chimere Dike",
+     "pos": "WR",
+     "nfl": "TEN",
+     "window": "Sun early",
+     "pts": 13.3,
+     "proj": 9.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Sam LaPorta",
+     "pos": "TE",
+     "nfl": "DET",
+     "window": "Sun early",
+     "pts": 9.2,
+     "proj": 12.4,
+     "injuryNow": "Questionable (Ankle)"
+    },
+    {
+     "name": "Braelon Allen",
+     "pos": "RB",
+     "nfl": "NYJ",
+     "window": "Sun late",
+     "pts": 9.4,
+     "proj": 9.3,
+     "injuryNow": null
+    },
+    {
+     "name": "Jonathan Taylor",
+     "pos": "RB",
+     "nfl": "IND",
+     "window": "Thu–Sat",
+     "pts": 6.7,
+     "proj": 14.4,
+     "injuryNow": null
+    }
+   ],
+   "bench": [
+    {
+     "name": "Keenan Allen",
+     "pos": "WR",
+     "nfl": "SF",
+     "pts": 6.8,
+     "proj": 5.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Jordan Watkins",
+     "pos": "WR",
+     "nfl": "SF",
+     "pts": 2.9,
+     "proj": 1.2,
+     "injuryNow": null
+    },
+    {
+     "name": "Seth McGowan",
+     "pos": "RB",
+     "nfl": "IND",
+     "pts": 1.8,
+     "proj": 6.2,
+     "injuryNow": "Out (Hamstring)"
+    },
+    {
+     "name": "Dohnte Meyers",
+     "pos": "WR",
+     "nfl": "CIN",
+     "pts": 1.2,
+     "proj": 4.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Jalen Royals",
+     "pos": "WR",
+     "nfl": "KC",
+     "pts": 0.0,
+     "proj": 0.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Isaac TeSlaa",
+     "pos": "WR",
+     "nfl": "DET",
+     "pts": 0.0,
+     "proj": 3.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Sean Tucker",
+     "pos": "RB",
+     "nfl": "TB",
+     "pts": 0.0,
+     "proj": 1.8,
+     "injuryNow": null
+    }
+   ],
+   "zeroStarters": [],
+   "bestLineup": 106.1,
+   "leftOnBench": 1.9,
+   "bestLineupPlayers": [
+    "Josh Allen",
+    "D'Andre Swift",
+    "Braelon Allen",
+    "Khalil Shakir",
+    "Chimere Dike",
+    "Tee Higgins",
+    "Sam LaPorta",
+    "Keenan Allen",
+    "Jonathan Taylor"
+   ]
+  },
+  "5": {
+   "name": "CeeDeez Nutz",
+   "matchup": 4,
+   "points": 155.05,
+   "flow": [
+    0.0,
+    0.0,
+    112.85,
+    131.85,
+    131.85,
+    155.05
+   ],
+   "starters": [
+    {
+     "name": "Aaron Rodgers",
+     "pos": "QB",
+     "nfl": "PIT",
+     "window": "Sun early",
+     "pts": 20.25,
+     "proj": 22.3,
+     "injuryNow": null
+    },
+    {
+     "name": "Chuba Hubbard",
+     "pos": "RB",
+     "nfl": "CAR",
+     "window": "Sun early",
+     "pts": 28.0,
+     "proj": 16.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Breece Hall",
+     "pos": "RB",
+     "nfl": "NYJ",
+     "window": "Sun late",
+     "pts": 19.0,
+     "proj": 13.9,
+     "injuryNow": null
+    },
+    {
+     "name": "CeeDee Lamb",
+     "pos": "WR",
+     "nfl": "DAL",
+     "window": "Sun early",
+     "pts": 32.2,
+     "proj": 21.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Antonio Williams",
+     "pos": "WR",
+     "nfl": "WAS",
+     "window": "MNF",
+     "pts": 23.2,
+     "proj": 8.3,
+     "injuryNow": null
+    },
+    {
+     "name": "DeVonta Smith",
+     "pos": "WR",
+     "nfl": "PHI",
+     "window": "Sun early",
+     "pts": 9.1,
+     "proj": 13.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Mark Andrews",
+     "pos": "TE",
+     "nfl": "BAL",
+     "window": "Sun early",
+     "pts": 3.4,
+     "proj": 7.5,
+     "injuryNow": null
+    },
+    {
+     "name": "Darren Waller",
+     "pos": "TE",
+     "nfl": "CAR",
+     "window": "Sun early",
+     "pts": 7.2,
+     "proj": 8.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Ty Johnson",
+     "pos": "RB",
+     "nfl": "BUF",
+     "window": "Sun early",
+     "pts": 12.7,
+     "proj": 6.3,
+     "injuryNow": null
+    }
+   ],
+   "bench": [
+    {
+     "name": "Cam Ward",
+     "pos": "QB",
+     "nfl": "TEN",
+     "pts": 28.7,
+     "proj": 21.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Devin Singletary",
+     "pos": "RB",
+     "nfl": "NYG",
+     "pts": 2.0,
+     "proj": 4.5,
+     "injuryNow": null
+    },
+    {
+     "name": "LeQuint Allen Jr.",
+     "pos": "RB",
+     "nfl": "JAX",
+     "pts": 0.9,
+     "proj": 1.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Jordan James",
+     "pos": "RB",
+     "nfl": "SF",
+     "pts": 0.7,
+     "proj": 0.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Oronde Gadsden",
+     "pos": "TE",
+     "nfl": "LAC",
+     "pts": 0.0,
+     "proj": 5.2,
+     "injuryNow": null
+    },
+    {
+     "name": "Eli Stowers",
+     "pos": "TE",
+     "nfl": "PHI",
+     "pts": 0.0,
+     "proj": 2.5,
+     "injuryNow": null
+    }
+   ],
+   "zeroStarters": [],
+   "bestLineup": 163.5,
+   "leftOnBench": 8.45,
+   "bestLineupPlayers": [
+    "Cam Ward",
+    "Chuba Hubbard",
+    "Breece Hall",
+    "CeeDee Lamb",
+    "Antonio Williams",
+    "DeVonta Smith",
+    "Darren Waller",
+    "Ty Johnson",
+    "Mark Andrews"
+   ]
+  },
+  "6": {
+   "name": "PerryCock",
+   "matchup": 6,
+   "points": 137.95,
+   "flow": [
+    0.0,
+    0.0,
+    73.7,
+    101.95,
+    129.85,
+    137.95
+   ],
+   "starters": [
+    {
+     "name": "Bo Nix",
+     "pos": "QB",
+     "nfl": "DEN",
+     "window": "Sun late",
+     "pts": 15.75,
+     "proj": 23.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Christian McCaffrey",
+     "pos": "RB",
+     "nfl": "SF",
+     "window": "SNF",
+     "pts": 14.2,
+     "proj": 20.0,
+     "injuryNow": null
+    },
+    {
+     "name": "James Cook III",
+     "pos": "RB",
+     "nfl": "BUF",
+     "window": "Sun early",
+     "pts": 17.2,
+     "proj": 19.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Ja'Marr Chase",
+     "pos": "WR",
+     "nfl": "CIN",
+     "window": "MNF",
+     "pts": 8.1,
+     "proj": 22.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Justin Jefferson",
+     "pos": "WR",
+     "nfl": "MIN",
+     "window": "SNF",
+     "pts": 13.7,
+     "proj": 18.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Chris Olave",
+     "pos": "WR",
+     "nfl": "NO",
+     "window": "Sun early",
+     "pts": 21.2,
+     "proj": 15.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Travis Kelce",
+     "pos": "TE",
+     "nfl": "KC",
+     "window": "Sun early",
+     "pts": 25.4,
+     "proj": 13.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Josh Downs",
+     "pos": "WR",
+     "nfl": "KC",
+     "window": "Sun early",
+     "pts": 9.9,
+     "proj": 10.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Jakobi Meyers",
+     "pos": "WR",
+     "nfl": "JAX",
+     "window": "Sun late",
+     "pts": 12.5,
+     "proj": 8.7,
+     "injuryNow": null
+    }
+   ],
+   "bench": [
+    {
+     "name": "Bryce Young",
+     "pos": "QB",
+     "nfl": "CAR",
+     "pts": 22.5,
+     "proj": 23.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Justice Hill",
+     "pos": "RB",
+     "nfl": "BAL",
+     "pts": 17.6,
+     "proj": 7.5,
+     "injuryNow": null
+    },
+    {
+     "name": "Malachi Fields",
+     "pos": "WR",
+     "nfl": "NYG",
+     "pts": 4.5,
+     "proj": 6.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Xavier Hutchinson",
+     "pos": "WR",
+     "nfl": "HOU",
+     "pts": 3.3,
+     "proj": 7.7,
+     "injuryNow": null
+    },
+    {
+     "name": "Ray Davis",
+     "pos": "RB",
+     "nfl": "BUF",
+     "pts": 1.9,
+     "proj": 1.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Isaiah Davis",
+     "pos": "RB",
+     "nfl": "NYJ",
+     "pts": 0.0,
+     "proj": 0.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Troy Franklin",
+     "pos": "WR",
+     "nfl": "DEN",
+     "pts": 0.0,
+     "proj": 2.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Reggie Virgil",
+     "pos": "WR",
+     "nfl": "ARI",
+     "pts": 0.0,
+     "proj": 4.6,
+     "injuryNow": null
+    }
+   ],
+   "zeroStarters": [],
+   "bestLineup": 154.2,
+   "leftOnBench": 16.25,
+   "bestLineupPlayers": [
+    "Bryce Young",
+    "Justice Hill",
+    "James Cook III",
+    "Chris Olave",
+    "Justin Jefferson",
+    "Jakobi Meyers",
+    "Travis Kelce",
+    "Christian McCaffrey",
+    "Josh Downs"
+   ]
+  },
+  "7": {
+   "name": "Geno-Cide Smith",
+   "matchup": 3,
+   "points": 110.1,
+   "flow": [
+    0.0,
+    22.6,
+    98.8,
+    98.8,
+    110.1,
+    110.1
+   ],
+   "starters": [
+    {
+     "name": "Patrick Mahomes",
+     "pos": "QB",
+     "nfl": "KC",
+     "window": "Sun early",
+     "pts": 36.2,
+     "proj": 30.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Travis Etienne Jr.",
+     "pos": "RB",
+     "nfl": "NO",
+     "window": "Sun early",
+     "pts": 7.6,
+     "proj": 10.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Aaron Jones Sr.",
+     "pos": "RB",
+     "nfl": "MIN",
+     "window": "SNF",
+     "pts": 11.3,
+     "proj": 8.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Nico Collins",
+     "pos": "WR",
+     "nfl": "HOU",
+     "window": "Thu–Sat",
+     "pts": 14.8,
+     "proj": 16.2,
+     "injuryNow": null
+    },
+    {
+     "name": "DK Metcalf",
+     "pos": "WR",
+     "nfl": "PIT",
+     "window": "Sun early",
+     "pts": 1.2,
+     "proj": 9.7,
+     "injuryNow": null
+    },
+    {
+     "name": "Zay Flowers",
+     "pos": "WR",
+     "nfl": "BAL",
+     "window": "Sun early",
+     "pts": 16.4,
+     "proj": 15.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Trey McBride",
+     "pos": "TE",
+     "nfl": "ARI",
+     "window": "Sun early",
+     "pts": 14.8,
+     "proj": 12.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Dalton Schultz",
+     "pos": "TE",
+     "nfl": "HOU",
+     "window": "Thu–Sat",
+     "pts": 2.1,
+     "proj": 8.2,
+     "injuryNow": null
+    },
+    {
+     "name": "Tank Dell",
+     "pos": "WR",
+     "nfl": "HOU",
+     "window": "Thu–Sat",
+     "pts": 5.7,
+     "proj": 7.5,
+     "injuryNow": null
+    }
+   ],
+   "bench": [
+    {
+     "name": "Dak Prescott",
+     "pos": "QB",
+     "nfl": "DAL",
+     "pts": 49.15,
+     "proj": 26.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Kimani Vidal",
+     "pos": "RB",
+     "nfl": "LAC",
+     "pts": 7.4,
+     "proj": 7.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Roman Wilson",
+     "pos": "WR",
+     "nfl": "PIT",
+     "pts": 7.3,
+     "proj": 5.3,
+     "injuryNow": null
+    },
+    {
+     "name": "Marvin Mims Jr.",
+     "pos": "WR",
+     "nfl": "DEN",
+     "pts": 5.7,
+     "proj": 4.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Jauan Jennings",
+     "pos": "WR",
+     "nfl": "MIN",
+     "pts": 5.0,
+     "proj": 4.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Roschon Johnson",
+     "pos": "RB",
+     "nfl": "CHI",
+     "pts": 0.0,
+     "proj": 0.5,
+     "injuryNow": "Out (Ankle)"
+    },
+    {
+     "name": "Xavier Legette",
+     "pos": "WR",
+     "nfl": "CAR",
+     "pts": 0.0,
+     "proj": 2.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Kaytron Allen",
+     "pos": "RB",
+     "nfl": "MIA",
+     "pts": 0.0,
+     "proj": 2.2,
+     "injuryNow": null
+    },
+    {
+     "name": "Juwan Johnson",
+     "pos": "TE",
+     "nfl": "NO",
+     "pts": 0.0,
+     "proj": 8.6,
+     "injuryNow": "Questionable (Hamstring)"
+    }
+   ],
+   "zeroStarters": [],
+   "bestLineup": 134.45,
+   "leftOnBench": 24.35,
+   "bestLineupPlayers": [
+    "Dak Prescott",
+    "Aaron Jones Sr.",
+    "Travis Etienne Jr.",
+    "Zay Flowers",
+    "Nico Collins",
+    "Roman Wilson",
+    "Trey McBride",
+    "Kimani Vidal",
+    "Marvin Mims Jr."
+   ]
+  },
+  "8": {
+   "name": "PhilthyPhil",
+   "matchup": 5,
+   "points": 115.2,
+   "flow": [
+    0.0,
+    28.4,
+    102.3,
+    115.2,
+    115.2,
+    115.2
+   ],
+   "starters": [
+    {
+     "name": "C.J. Stroud",
+     "pos": "QB",
+     "nfl": "HOU",
+     "window": "Thu–Sat",
+     "pts": 28.4,
+     "proj": 26.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Jahmyr Gibbs",
+     "pos": "RB",
+     "nfl": "DET",
+     "window": "Sun early",
+     "pts": 27.8,
+     "proj": 23.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Bucky Irving",
+     "pos": "RB",
+     "nfl": "TB",
+     "window": "Sun early",
+     "pts": 19.0,
+     "proj": 18.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Rashee Rice",
+     "pos": "WR",
+     "nfl": "KC",
+     "window": "Sun early",
+     "pts": 11.3,
+     "proj": 15.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Ryan Flournoy",
+     "pos": "WR",
+     "nfl": "DAL",
+     "window": "Sun early",
+     "pts": 2.1,
+     "proj": 10.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Caleb Douglas",
+     "pos": "WR",
+     "nfl": "MIA",
+     "window": "Sun early",
+     "pts": 5.0,
+     "proj": 8.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Brenton Strange",
+     "pos": "TE",
+     "nfl": "JAX",
+     "window": "Sun late",
+     "pts": 4.6,
+     "proj": 9.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Ollie Gordon II",
+     "pos": "RB",
+     "nfl": "MIA",
+     "window": "Sun early",
+     "pts": 8.7,
+     "proj": 11.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Bhayshul Tuten",
+     "pos": "RB",
+     "nfl": "JAX",
+     "window": "Sun late",
+     "pts": 8.3,
+     "proj": 15.4,
+     "injuryNow": "Questionable (Undisclosed)"
+    }
+   ],
+   "bench": [
+    {
+     "name": "Caleb Williams",
+     "pos": "QB",
+     "nfl": "CHI",
+     "pts": 20.15,
+     "proj": 24.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Jacory Croskey-Merritt",
+     "pos": "RB",
+     "nfl": "WAS",
+     "pts": 15.7,
+     "proj": 7.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Deebo Samuel Sr.",
+     "pos": "WR",
+     "nfl": "SF",
+     "pts": 7.7,
+     "proj": 9.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Jordan Mason",
+     "pos": "RB",
+     "nfl": "MIN",
+     "pts": 4.7,
+     "proj": 8.7,
+     "injuryNow": null
+    },
+    {
+     "name": "Mike Washington Jr.",
+     "pos": "RB",
+     "nfl": "LV",
+     "pts": 4.2,
+     "proj": 6.5,
+     "injuryNow": null
+    },
+    {
+     "name": "Barion Brown",
+     "pos": "WR",
+     "nfl": "NO",
+     "pts": 0.0,
+     "proj": 0.7,
+     "injuryNow": null
+    }
+   ],
+   "zeroStarters": [],
+   "bestLineup": 128.2,
+   "leftOnBench": 13.0,
+   "bestLineupPlayers": [
+    "C.J. Stroud",
+    "Jahmyr Gibbs",
+    "Bucky Irving",
+    "Rashee Rice",
+    "Deebo Samuel Sr.",
+    "Caleb Douglas",
+    "Brenton Strange",
+    "Jacory Croskey-Merritt",
+    "Ollie Gordon II"
+   ]
+  },
+  "9": {
+   "name": "Bijan al Gaib",
+   "matchup": 4,
+   "points": 140.85,
+   "flow": [
+    0.0,
+    0.0,
+    87.7,
+    132.25,
+    132.25,
+    140.85
+   ],
+   "starters": [
+    {
+     "name": "Trevor Lawrence",
+     "pos": "QB",
+     "nfl": "JAX",
+     "window": "Sun late",
+     "pts": 19.75,
+     "proj": 25.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Javonte Williams",
+     "pos": "RB",
+     "nfl": "DAL",
+     "window": "Sun early",
+     "pts": 24.1,
+     "proj": 21.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Chase Brown",
+     "pos": "RB",
+     "nfl": "CIN",
+     "window": "MNF",
+     "pts": 8.6,
+     "proj": 15.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Amon-Ra St. Brown",
+     "pos": "WR",
+     "nfl": "DET",
+     "window": "Sun early",
+     "pts": 14.7,
+     "proj": 19.3,
+     "injuryNow": null
+    },
+    {
+     "name": "George Pickens",
+     "pos": "WR",
+     "nfl": "DAL",
+     "window": "Sun early",
+     "pts": 25.8,
+     "proj": 14.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Parker Washington",
+     "pos": "WR",
+     "nfl": "JAX",
+     "window": "Sun late",
+     "pts": 20.3,
+     "proj": 14.2,
+     "injuryNow": null
+    },
+    {
+     "name": "Mason Taylor",
+     "pos": "TE",
+     "nfl": "NYJ",
+     "window": "Sun late",
+     "pts": 4.5,
+     "proj": 8.0,
+     "injuryNow": null
+    },
+    {
+     "name": "DJ Moore",
+     "pos": "WR",
+     "nfl": "BUF",
+     "window": "Sun early",
+     "pts": 23.1,
+     "proj": 12.9,
+     "injuryNow": "Questionable (Knee)"
+    },
+    {
+     "name": "Courtland Sutton",
+     "pos": "WR",
+     "nfl": "DEN",
+     "window": "Sun late",
+     "pts": 0.0,
+     "proj": 8.0,
+     "injuryNow": null
+    }
+   ],
+   "bench": [
+    {
+     "name": "Justin Herbert",
+     "pos": "QB",
+     "nfl": "LAC",
+     "pts": 27.75,
+     "proj": 21.7,
+     "injuryNow": "Questionable (Concussion)"
+    },
+    {
+     "name": "Kayshon Boutte",
+     "pos": "WR",
+     "nfl": "HOU",
+     "pts": 12.0,
+     "proj": 6.8,
+     "injuryNow": "Questionable (Hip)"
+    },
+    {
+     "name": "T.J. Hockenson",
+     "pos": "TE",
+     "nfl": "MIN",
+     "pts": 11.5,
+     "proj": 8.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Kaelon Black",
+     "pos": "RB",
+     "nfl": "SF",
+     "pts": 2.5,
+     "proj": 4.7,
+     "injuryNow": null
+    },
+    {
+     "name": "Sione Vaki",
+     "pos": "RB",
+     "nfl": "DET",
+     "pts": 1.6,
+     "proj": 4.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Nate Boerkircher",
+     "pos": "TE",
+     "nfl": "JAX",
+     "pts": 0.0,
+     "proj": 2.6,
+     "injuryNow": null
+    },
+    {
+     "name": "J.K. Dobbins",
+     "pos": "RB",
+     "nfl": "DEN",
+     "pts": 0.0,
+     "proj": 8.4,
+     "injuryNow": null
+    }
+   ],
+   "zeroStarters": [
+    "Courtland Sutton"
+   ],
+   "bestLineup": 167.85,
+   "leftOnBench": 27.0,
+   "bestLineupPlayers": [
+    "Justin Herbert",
+    "Javonte Williams",
+    "Chase Brown",
+    "George Pickens",
+    "DJ Moore",
+    "Parker Washington",
+    "T.J. Hockenson",
+    "Amon-Ra St. Brown",
+    "Kayshon Boutte"
+   ]
+  },
+  "10": {
+   "name": "Open for Business",
+   "matchup": 3,
+   "points": 88.05,
+   "flow": [
+    0.0,
+    3.2,
+    31.1,
+    78.3,
+    88.05,
+    88.05
+   ],
+   "starters": [
+    {
+     "name": "Kirk Cousins",
+     "pos": "QB",
+     "nfl": "MIN",
+     "window": "SNF",
+     "pts": 9.75,
+     "proj": 21.5,
+     "injuryNow": null
+    },
+    {
+     "name": "Jonah Coleman",
+     "pos": "RB",
+     "nfl": "DEN",
+     "window": "Sun late",
+     "pts": 36.9,
+     "proj": 17.5,
+     "injuryNow": null
+    },
+    {
+     "name": "Omarion Hampton",
+     "pos": "RB",
+     "nfl": "LAC",
+     "window": "Sun late",
+     "pts": 10.3,
+     "proj": 10.3,
+     "injuryNow": null
+    },
+    {
+     "name": "Keon Coleman",
+     "pos": "WR",
+     "nfl": "BUF",
+     "window": "Sun early",
+     "pts": 3.7,
+     "proj": 9.2,
+     "injuryNow": null
+    },
+    {
+     "name": "Elic Ayomanor",
+     "pos": "WR",
+     "nfl": "TEN",
+     "window": "Sun early",
+     "pts": 5.7,
+     "proj": 10.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Germie Bernard",
+     "pos": "WR",
+     "nfl": "PIT",
+     "window": "Sun early",
+     "pts": 10.0,
+     "proj": 7.5,
+     "injuryNow": null
+    },
+    {
+     "name": "Tyler Warren",
+     "pos": "TE",
+     "nfl": "IND",
+     "window": "Thu–Sat",
+     "pts": 3.2,
+     "proj": 10.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Rome Odunze",
+     "pos": "WR",
+     "nfl": "CHI",
+     "window": "Sun early",
+     "pts": 8.5,
+     "proj": 11.2,
+     "injuryNow": null
+    },
+    {
+     "name": "Ja'Kobi Lane",
+     "pos": "WR",
+     "nfl": "BAL",
+     "window": "Sun early",
+     "pts": 0.0,
+     "proj": 6.4,
+     "injuryNow": null
+    }
+   ],
+   "bench": [
+    {
+     "name": "Ted Hurst III",
+     "pos": "WR",
+     "nfl": "TB",
+     "pts": 22.6,
+     "proj": 1.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Brian Thomas Jr.",
+     "pos": "WR",
+     "nfl": "JAX",
+     "pts": 8.8,
+     "proj": 3.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Cyrus Allen",
+     "pos": "WR",
+     "nfl": "KC",
+     "pts": 6.1,
+     "proj": 2.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Treylon Burks",
+     "pos": "WR",
+     "nfl": "WAS",
+     "pts": 5.0,
+     "proj": 7.0,
+     "injuryNow": null
+    },
+    {
+     "name": "Quentin Johnston",
+     "pos": "WR",
+     "nfl": "LAC",
+     "pts": 2.0,
+     "proj": 7.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Chris Bell",
+     "pos": "WR",
+     "nfl": "MIA",
+     "pts": 1.8,
+     "proj": 3.8,
+     "injuryNow": "Questionable (Chest)"
+    }
+   ],
+   "zeroStarters": [
+    "Ja'Kobi Lane"
+   ],
+   "bestLineup": 116.15,
+   "leftOnBench": 28.1,
+   "bestLineupPlayers": [
+    "Kirk Cousins",
+    "Jonah Coleman",
+    "Omarion Hampton",
+    "Ted Hurst III",
+    "Germie Bernard",
+    "Brian Thomas Jr.",
+    "Tyler Warren",
+    "Rome Odunze",
+    "Cyrus Allen"
+   ]
+  },
+  "11": {
+   "name": "ChrisUMD23",
+   "matchup": 6,
+   "points": 128.85,
+   "flow": [
+    0.0,
+    17.4,
+    106.75,
+    128.85,
+    128.85,
+    128.85
+   ],
+   "starters": [
+    {
+     "name": "Jared Goff",
+     "pos": "QB",
+     "nfl": "DET",
+     "window": "Sun early",
+     "pts": 27.15,
+     "proj": 22.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Saquon Barkley",
+     "pos": "RB",
+     "nfl": "PHI",
+     "window": "Sun early",
+     "pts": 13.5,
+     "proj": 12.7,
+     "injuryNow": "Questionable (Arm)"
+    },
+    {
+     "name": "Derrick Henry",
+     "pos": "RB",
+     "nfl": "BAL",
+     "window": "Sun early",
+     "pts": 19.1,
+     "proj": 15.5,
+     "injuryNow": "Questionable (Concussion)"
+    },
+    {
+     "name": "Tre Tucker",
+     "pos": "WR",
+     "nfl": "LV",
+     "window": "Sun late",
+     "pts": 7.0,
+     "proj": 9.6,
+     "injuryNow": null
+    },
+    {
+     "name": "Luther Burden III",
+     "pos": "WR",
+     "nfl": "CHI",
+     "window": "Sun early",
+     "pts": 3.3,
+     "proj": 15.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Jaylen Waddle",
+     "pos": "WR",
+     "nfl": "DEN",
+     "window": "Sun late",
+     "pts": 9.1,
+     "proj": 11.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Kenyon Sadiq",
+     "pos": "TE",
+     "nfl": "NYJ",
+     "window": "Sun late",
+     "pts": 6.0,
+     "proj": 6.5,
+     "injuryNow": null
+    },
+    {
+     "name": "Emmett Johnson",
+     "pos": "RB",
+     "nfl": "KC",
+     "window": "Sun early",
+     "pts": 26.3,
+     "proj": 19.6,
+     "injuryNow": null
+    },
+    {
+     "name": "David Montgomery",
+     "pos": "RB",
+     "nfl": "HOU",
+     "window": "Thu–Sat",
+     "pts": 17.4,
+     "proj": 14.1,
+     "injuryNow": null
+    }
+   ],
+   "bench": [
+    {
+     "name": "Rashod Bateman",
+     "pos": "WR",
+     "nfl": "BAL",
+     "pts": 14.7,
+     "proj": 5.3,
+     "injuryNow": null
+    },
+    {
+     "name": "Xavier Worthy",
+     "pos": "WR",
+     "nfl": "KC",
+     "pts": 11.8,
+     "proj": 6.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Kenny Gainwell",
+     "pos": "RB",
+     "nfl": "TB",
+     "pts": 9.9,
+     "proj": 7.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Brevyn Spann-Ford",
+     "pos": "TE",
+     "nfl": "DAL",
+     "pts": 8.5,
+     "proj": 7.7,
+     "injuryNow": null
+    },
+    {
+     "name": "Alvin Kamara",
+     "pos": "RB",
+     "nfl": "NO",
+     "pts": 7.2,
+     "proj": 7.2,
+     "injuryNow": null
+    },
+    {
+     "name": "Adonai Mitchell",
+     "pos": "WR",
+     "nfl": "NYJ",
+     "pts": 5.0,
+     "proj": 9.9,
+     "injuryNow": null
+    },
+    {
+     "name": "Chris Godwin Jr.",
+     "pos": "WR",
+     "nfl": "TB",
+     "pts": 4.3,
+     "proj": 8.8,
+     "injuryNow": null
+    }
+   ],
+   "zeroStarters": [],
+   "bestLineup": 147.55,
+   "leftOnBench": 18.7,
+   "bestLineupPlayers": [
+    "Jared Goff",
+    "Emmett Johnson",
+    "Derrick Henry",
+    "Rashod Bateman",
+    "Xavier Worthy",
+    "Jaylen Waddle",
+    "Brevyn Spann-Ford",
+    "David Montgomery",
+    "Saquon Barkley"
+   ]
+  },
+  "12": {
+   "name": "degr",
+   "matchup": 2,
+   "points": 100.35,
+   "flow": [
+    0.0,
+    0.0,
+    41.7,
+    69.6,
+    100.35,
+    100.35
+   ],
+   "starters": [
+    {
+     "name": "Brock Purdy",
+     "pos": "QB",
+     "nfl": "SF",
+     "window": "SNF",
+     "pts": 30.75,
+     "proj": 21.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Ashton Jeanty",
+     "pos": "RB",
+     "nfl": "LV",
+     "window": "Sun late",
+     "pts": 27.9,
+     "proj": 12.7,
+     "injuryNow": null
+    },
+    {
+     "name": "Kyle Monangai",
+     "pos": "RB",
+     "nfl": "CHI",
+     "window": "Sun early",
+     "pts": 1.8,
+     "proj": 8.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Jalen Coker",
+     "pos": "WR",
+     "nfl": "CAR",
+     "window": "Sun early",
+     "pts": 8.7,
+     "proj": 12.9,
+     "injuryNow": "Questionable (Undisclosed)"
+    },
+    {
+     "name": "Makai Lemon",
+     "pos": "WR",
+     "nfl": "PHI",
+     "window": "Sun early",
+     "pts": 1.3,
+     "proj": 7.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Devaughn Vele",
+     "pos": "WR",
+     "nfl": "NO",
+     "window": "Sun early",
+     "pts": 14.6,
+     "proj": 5.4,
+     "injuryNow": null
+    },
+    {
+     "name": "Dallas Goedert",
+     "pos": "TE",
+     "nfl": "PHI",
+     "window": "Sun early",
+     "pts": 4.8,
+     "proj": 9.9,
+     "injuryNow": "Questionable (Shin)"
+    },
+    {
+     "name": "Gunnar Helm",
+     "pos": "TE",
+     "nfl": "TEN",
+     "window": "Sun early",
+     "pts": 3.4,
+     "proj": 7.8,
+     "injuryNow": null
+    },
+    {
+     "name": "Malik Washington",
+     "pos": "WR",
+     "nfl": "MIA",
+     "window": "Sun early",
+     "pts": 7.1,
+     "proj": 8.9,
+     "injuryNow": null
+    }
+   ],
+   "bench": [
+    {
+     "name": "Travis Hunter",
+     "pos": "DB",
+     "nfl": "JAX",
+     "pts": 2.2,
+     "proj": 3.1,
+     "injuryNow": null
+    },
+    {
+     "name": "Keaton Mitchell",
+     "pos": "RB",
+     "nfl": "LAC",
+     "pts": 1.6,
+     "proj": 6.0,
+     "injuryNow": "Questionable (Back)"
+    },
+    {
+     "name": "Kevin Coleman Jr.",
+     "pos": "WR",
+     "nfl": "MIA",
+     "pts": 0.0,
+     "proj": 1.9,
+     "injuryNow": null
+    }
+   ],
+   "zeroStarters": [],
+   "bestLineup": 101.25,
+   "leftOnBench": 0.9,
+   "bestLineupPlayers": [
+    "Brock Purdy",
+    "Ashton Jeanty",
+    "Kyle Monangai",
+    "Devaughn Vele",
+    "Jalen Coker",
+    "Malik Washington",
+    "Dallas Goedert",
+    "Gunnar Helm",
+    "Travis Hunter"
+   ]
+  }
+ },
+ "games": [
+  {
+   "winner": 1,
+   "loser": 12,
+   "margin": 5.2,
+   "flipsWithBestLineup": false,
+   "leadByWindow": {
+    "team": 1,
+    "values": [
+     0.0,
+     4.9,
+     -10.2,
+     22.25,
+     -8.5,
+     5.2
+    ]
+   },
+   "teams": [
+    1,
+    12
+   ]
+  },
+  {
+   "winner": 2,
+   "loser": 8,
+   "margin": 3.1,
+   "flipsWithBestLineup": true,
+   "leadByWindow": {
+    "team": 2,
+    "values": [
+     0.0,
+     -28.4,
+     -81.9,
+     -77.6,
+     -34.3,
+     3.1
+    ]
+   },
+   "teams": [
+    2,
+    8
+   ]
+  },
+  {
+   "winner": 4,
+   "loser": 3,
+   "margin": 3.25,
+   "flipsWithBestLineup": true,
+   "leadByWindow": {
+    "team": 3,
+    "values": [
+     0.0,
+     -6.7,
+     -32.8,
+     -21.5,
+     -21.5,
+     -3.25
+    ]
+   },
+   "teams": [
+    3,
+    4
+   ]
+  },
+  {
+   "winner": 5,
+   "loser": 9,
+   "margin": 14.2,
+   "flipsWithBestLineup": true,
+   "leadByWindow": {
+    "team": 5,
+    "values": [
+     0.0,
+     0.0,
+     25.15,
+     -0.4,
+     -0.4,
+     14.2
+    ]
+   },
+   "teams": [
+    5,
+    9
+   ]
+  },
+  {
+   "winner": 6,
+   "loser": 11,
+   "margin": 9.1,
+   "flipsWithBestLineup": true,
+   "leadByWindow": {
+    "team": 6,
+    "values": [
+     0.0,
+     -17.4,
+     -33.05,
+     -26.9,
+     1.0,
+     9.1
+    ]
+   },
+   "teams": [
+    6,
+    11
+   ]
+  },
+  {
+   "winner": 7,
+   "loser": 10,
+   "margin": 22.05,
+   "flipsWithBestLineup": true,
+   "leadByWindow": {
+    "team": 7,
+    "values": [
+     0.0,
+     19.4,
+     67.7,
+     20.5,
+     22.05,
+     22.05
+    ]
+   },
+   "teams": [
+    7,
+    10
+   ]
+  }
+ ],
+ "topStarters": [
+  [
+   36.9,
+   "Jonah Coleman",
+   "Open for Business",
+   "starter"
+  ],
+  [
+   36.2,
+   "Patrick Mahomes",
+   "Geno-Cide Smith",
+   "starter"
+  ],
+  [
+   32.2,
+   "CeeDee Lamb",
+   "CeeDeez Nutz",
+   "starter"
+  ],
+  [
+   31.55,
+   "Fernando Mendoza",
+   "Matty Ice",
+   "starter"
+  ],
+  [
+   30.75,
+   "Brock Purdy",
+   "degr",
+   "starter"
+  ],
+  [
+   28.9,
+   "Joe Burrow",
+   "Murrdawgs Massage Parlor",
+   "starter"
+  ],
+  [
+   28.4,
+   "C.J. Stroud",
+   "PhilthyPhil",
+   "starter"
+  ],
+  [
+   28.0,
+   "Chuba Hubbard",
+   "CeeDeez Nutz",
+   "starter"
+  ],
+  [
+   27.9,
+   "Ashton Jeanty",
+   "degr",
+   "starter"
+  ],
+  [
+   27.8,
+   "Jahmyr Gibbs",
+   "PhilthyPhil",
+   "starter"
+  ],
+  [
+   27.15,
+   "Jared Goff",
+   "ChrisUMD23",
+   "starter"
+  ],
+  [
+   26.3,
+   "Emmett Johnson",
+   "ChrisUMD23",
+   "starter"
+  ]
+ ],
+ "topBench": [
+  [
+   49.15,
+   "Dak Prescott",
+   "Geno-Cide Smith",
+   "bench"
+  ],
+  [
+   28.7,
+   "Cam Ward",
+   "CeeDeez Nutz",
+   "bench"
+  ],
+  [
+   27.75,
+   "Justin Herbert",
+   "Bijan al Gaib",
+   "bench"
+  ],
+  [
+   22.8,
+   "Jack Bech",
+   "Matty Ice",
+   "bench"
+  ],
+  [
+   22.6,
+   "Ted Hurst III",
+   "Open for Business",
+   "bench"
+  ],
+  [
+   22.5,
+   "Bryce Young",
+   "PerryCock",
+   "bench"
+  ],
+  [
+   20.15,
+   "Caleb Williams",
+   "PhilthyPhil",
+   "bench"
+  ],
+  [
+   18.5,
+   "Tyler Shough",
+   "Murrdawgs Massage Parlor",
+   "bench"
+  ]
+ ],
+ "transactions": [
+  {
+   "type": "waiver",
+   "teams": [
+    "ChrisUMD23"
+   ],
+   "adds": {
+    "Brevyn Spann-Ford": "ChrisUMD23"
+   },
+   "drops": {},
+   "picks": [],
+   "faab": 5
+  },
+  {
+   "type": "waiver",
+   "teams": [
+    "Cheesehead10"
+   ],
+   "adds": {
+    "Will Shipley": "Cheesehead10"
+   },
+   "drops": {
+    "Tai Felton": "Cheesehead10"
+   },
+   "picks": [],
+   "faab": 0
+  },
+  {
+   "type": "waiver",
+   "teams": [
+    "Matty Ice"
+   ],
+   "adds": {
+    "Jahan Dotson": "Matty Ice"
+   },
+   "drops": {},
+   "picks": [],
+   "faab": 0
+  },
+  {
+   "type": "waiver",
+   "teams": [
+    "Matty Ice"
+   ],
+   "adds": {
+    "Austin Ekeler": "Matty Ice"
+   },
+   "drops": {},
+   "picks": [],
+   "faab": 0
+  },
+  {
+   "type": "free_agent",
+   "teams": [
+    "Murrdawgs Massage Parlor"
+   ],
+   "adds": {},
+   "drops": {
+    "Myles Price": "Murrdawgs Massage Parlor"
+   },
+   "picks": [],
+   "faab": null
+  }
+ ],
+ "surprises": [
+  {
+   "name": "Jonah Coleman",
+   "team": "Open for Business",
+   "pts": 36.9,
+   "proj": 17.5,
+   "overProj": 19.4
+  },
+  {
+   "name": "Fernando Mendoza",
+   "team": "Matty Ice",
+   "pts": 31.55,
+   "proj": 15.0,
+   "overProj": 16.6
+  },
+  {
+   "name": "Ashton Jeanty",
+   "team": "degr",
+   "pts": 27.9,
+   "proj": 12.7,
+   "overProj": 15.2
+  },
+  {
+   "name": "Antonio Williams",
+   "team": "CeeDeez Nutz",
+   "pts": 23.2,
+   "proj": 8.3,
+   "overProj": 14.9
+  },
+  {
+   "name": "Travis Kelce",
+   "team": "PerryCock",
+   "pts": 25.4,
+   "proj": 13.0,
+   "overProj": 12.4
+  },
+  {
+   "name": "Chuba Hubbard",
+   "team": "CeeDeez Nutz",
+   "pts": 28.0,
+   "proj": 16.6,
+   "overProj": 11.4
+  },
+  {
+   "name": "Mike Evans",
+   "team": "Murrdawgs Massage Parlor",
+   "pts": 24.9,
+   "proj": 13.8,
+   "overProj": 11.1
+  },
+  {
+   "name": "CeeDee Lamb",
+   "team": "CeeDeez Nutz",
+   "pts": 32.2,
+   "proj": 21.1,
+   "overProj": 11.1
+  }
+ ],
+ "duds": [
+  {
+   "name": "Ja'Marr Chase",
+   "team": "PerryCock",
+   "pts": 8.1,
+   "proj": 22.1,
+   "underProj": 14.0
+  },
+  {
+   "name": "Kirk Cousins",
+   "team": "Open for Business",
+   "pts": 9.75,
+   "proj": 21.5,
+   "underProj": 11.8
+  },
+  {
+   "name": "Luther Burden III",
+   "team": "ChrisUMD23",
+   "pts": 3.3,
+   "proj": 15.1,
+   "underProj": 11.8
+  },
+  {
+   "name": "Jaylen Warren",
+   "team": "Bad Bunny's Bush",
+   "pts": 4.9,
+   "proj": 15.8,
+   "underProj": 10.9
+  },
+  {
+   "name": "Cam Skattebo",
+   "team": "Murrdawgs Massage Parlor",
+   "pts": 5.8,
+   "proj": 16.4,
+   "underProj": 10.6
+  },
+  {
+   "name": "Josh Allen",
+   "team": "Bad Bunny's Bush",
+   "pts": 19.2,
+   "proj": 29.5,
+   "underProj": 10.3
+  },
+  {
+   "name": "Isaiah Likely",
+   "team": "Murrdawgs Massage Parlor",
+   "pts": 4.5,
+   "proj": 14.6,
+   "underProj": 10.1
+  },
+  {
+   "name": "Garrett Wilson",
+   "team": "Murrdawgs Massage Parlor",
+   "pts": 6.9,
+   "proj": 15.7,
+   "underProj": 8.8
+  }
+ ],
+ "projectionNote": "proj is Sleeper's projection for that week scored with league settings, what managers saw when setting lineups; injuryNow is the player's injury status when this file was built",
+ "teamNames": {
+  "1": "Matty Ice",
+  "2": "Murrdawgs Massage Parlor",
+  "3": "Cheesehead10",
+  "4": "Bad Bunny's Bush",
+  "5": "CeeDeez Nutz",
+  "6": "PerryCock",
+  "7": "Geno-Cide Smith",
+  "8": "PhilthyPhil",
+  "9": "Bijan al Gaib",
+  "10": "Open for Business",
+  "11": "ChrisUMD23",
+  "12": "degr"
+ },
+ "note": "Flow arrays are cumulative starter points after each window: Start, Thu–Sat, Sun early, Sun late, SNF, MNF"
+}
